@@ -1,0 +1,214 @@
+/* 解决最外层容器的高度塌陷 */
+.clearfix::before,
+.clearfix::after
+{
+	content: '';
+	display: table;
+	clear: both;
+}
+
+body {
+    font: 12px/1.5 Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+    color: #333;
+    background-color: #fff;
+    min-width: 1226px;
+}
+
+/**********************************************/
+
+/***
+	列表样式
+*/
+.service,
+.short-cut, 
+.uer-info
+{
+	list-style: none;
+	margin-left: 0px;
+	margin-top: 0px;
+}
+
+/***
+	导航栏最外层容器的样式
+*/
+.top-bar-wrapper
+{
+	width: 100%;
+	line-height: 40px;
+	background-color: #333;
+	margin-top: 0px;
+	margin-left: 0px;
+}
+
+/***
+	导航栏里面容器样式
+*/
+.top-bar
+{
+	/* 固定宽度 */
+	/* 撑开外层的容器 */
+	width: 1226px;
+	height: 40px;
+
+	/* 居中 */
+	margin-top: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	/* background-color: cadetblue; */
+
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+/***
+	左侧导航栏样式 
+*/
+.service
+{
+	float: left;
+}
+
+.service li
+{
+	float: left;
+}
+
+.service a
+{
+	color: #b0b0b0;
+	line-height: 40px;
+	display: inline-block;
+	text-decoration: none;
+}
+
+.service a:hover
+{
+	color: white
+}
+
+/*** 
+	右侧导航栏样式 
+*/
+.short-cut, 
+.uer-info
+{
+	float: right;
+}
+
+.uer-info li
+{
+	float: left;
+}
+
+.short-cut a, 
+.uer-info a
+{
+	color: #b0b0b0;
+	line-height: 40px;
+	display: inline-block;
+	text-decoration: none;
+}
+
+.uer-info a:hover
+{
+	color: white
+}
+
+.short-cut a
+{
+	width: 120px;
+	background-color: #424242;
+	text-align: center;
+}
+
+.short-cut i
+{
+	margin-right: 3px;
+}
+
+.short-cut:hover a
+{
+	color: #ff6700;
+	background-color: white;
+}
+
+.line
+{
+	color: #424242;
+	margin: 0 4px;
+}
+
+/***
+	以下设置 ‘下载 app’ 弹框样式
+*/
+.qrcode
+{
+	width: 124px;
+
+	height: 0px;
+	overflow: hidden;
+	transition: height 0.4s;
+	
+	position: absolute;
+	left: -36px;
+
+	/* 取消‘小米商城’的行高 */
+	line-height: 1px;
+	text-align: center;
+	background-color: white;
+	box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+}
+
+.app
+{
+	/* 为了小三角而开启相对定位 */
+	position: relative;
+}
+
+/* 热点后产生下拉框 */
+.app:hover .qrcode
+{
+	display: block;
+	height: 148px;
+}
+
+.app:hover::after
+{
+	display: block;
+}
+
+
+
+/* 小三角 */
+.app::after
+{
+	content: '';
+	width: 0px;
+	height: 0px;
+
+	display: none;
+
+	position: absolute;
+	bottom: 0px;
+	left: 15px;
+	right: 0px;
+	
+	border: 8px solid transparent;
+	border-top: none;
+	border-bottom-color: white;
+}
+
+.qrcode img
+{
+	width: 90px;
+	margin: 17px 17px;
+}
+
+.qrcode span
+{
+	color: #424242;
+}
+.qrcode span:hover
+{
+	color: #424242;
+}

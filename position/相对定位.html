@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		.box1
+		{
+			width: 100px;
+			height: 100px;
+			background-color: seagreen;
+		}
+		.box2
+		{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+
+			position: relative;
+			left: 200px;
+			top: -100px;
+		}
+		.box3
+		{
+			width: 100px;
+			height: 100px;
+			background-color: blue;
+		}
+	</style>
+</head>
+<body>
+	<!--
+		1，定位是一种更加高级的布局手段
+		2，通过定位可以将元素摆放在页面的任意位置
+		3，使用 position 属性来设置定位
+			可选值：
+			1）static 默认值，元素是静止的，没有开启定位
+			2）relative 开启元素的相对定位
+			3）absolute 开启元素的绝对定位
+			4）fixed 开启元素的固定定位
+			5）sticky 开启元素的粘滞定位
+			相对定位：
+			1）相对定位移动自己
+			2）相对定位不会使元素脱离文档流
+			3）相对定位不会改变元素的性质，行内元素还是行内元素，块元素还是块元素
+			4）相对定位移动元素之后，原来的空间还是被占着，没有被回收
+			5）相对定位会提升元素的层级
+	-->
+	<div class="box1"></div>
+	<div class="box2"></div>
+	<div class="box3"></div>
+</body>
+</html>

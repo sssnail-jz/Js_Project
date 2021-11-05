@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		.box1,.box2
+		{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+		}
+		.box2
+		{
+			background-color: blue;
+		}
+
+		.box3
+		{
+			width: 300px;
+			height: 300px;
+			background-color: red;
+		}
+		.box4
+		{
+			width: 100px;
+			height: 100px;
+			background-color: blue;
+			margin-top: 100px;
+		}
+	</style>
+</head>
+<body>
+	<!--
+		1，垂直外边距的折叠
+			相邻的垂直方向外边距会发生折叠
+			1）兄弟元素：
+				·兄弟元素垂直方向外边距会取双方的最大值
+				·特殊情况一正一负取两者之和
+				·特殊情况如果两者都是负的，取最小的
+				兄弟元素外边距之间的重叠对于开发是有利的，一般不需要处理
+			2）父子元素：
+				·父子元素间的外边距，子元素会传递给父元素
+				·处理方法后面待续...
+	-->
+	<!-- <div class="box1"></div>
+	<div class="box2"></div> -->
+	<div class="box3">
+		<div class="box4">
+
+		</div>
+	</div>
+</body>
+</html>

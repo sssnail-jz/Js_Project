@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		.clearfix::before,
+		.clearfix::after{
+			content: '';
+			display: table;
+			clear: both;
+		}
+	</style>
+</head>
+<body>
+	<!--
+		解决的两个问题：
+		1，高度塌陷问题（父元素大小可以被浮动元素撑开）
+		2，外边距重叠问题（父元素和子元素的外边距重叠，设置子元素的外边距的时候父元素的外边距不跟着一起被设置）
+		3，解决高度塌陷使用 after，解决外边距重叠问题使用 before
+	-->
+	<div class="box1 clearfix">
+		<div class="box2">
+	</div>
+</body>
+</html>

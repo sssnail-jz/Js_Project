@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		table
+		{
+			width: 50%;
+			border: 1px solid black;
+			margin: 0 auto;
+
+			/*
+				border-spacing 指定边框之间的距离
+				border-spacing 0px
+			*/
+			/*
+				border-collapse 设置边框的合并  
+			*/
+			border-collapse: collapse;
+		}
+
+		td
+		{
+			height: 50px;
+			border: 1px solid black;
+			/*
+				默认情况下td中的文字处于垂直居中 
+			*/
+			/* vertical-align: auto; */
+			text-align: center;
+		}
+
+		/*
+			如果表格中默认没写 tbody 那些，会自动创建
+			tbody 为 tr 的父元素  
+		*/
+		tbody > tr:nth-child(odd)
+		{
+			background-color: cadetblue;
+		}
+
+		/*
+			将块元素设置为 table-cell 的作用：
+				1，块元素可以使用单元格特有的属性（例如 vertical-align） 
+				2，那么子元素 box2 就会垂直居中于 box1
+		*/
+	</style>
+</head>
+<body>
+	
+	<div class="box1">
+		<div class="box2">
+
+		</div>
+	</div>
+
+	<table>
+		<tr>
+			<td>a</td>
+			<td>a</td>
+			<td>a</td>
+			<td>a</td>
+		</tr>
+			<td>b</td>
+			<td>b</td>
+			<td>b</td>
+			<td>b</td>
+		<tr>
+			<td>c</td>
+			<td>c</td>
+			<td>c</td>
+			<td>c</td>
+		</tr>
+		<tr>
+			<td>d</td>
+			<td>d</td>
+			<td>d</td>
+			<td>d</td>
+		</tr>
+		<tr>
+			<td>e</td>
+			<td>e</td>
+			<td>e</td>
+			<td>e</td>
+		</tr>
+		<tr>
+			<td>f</td>
+			<td>f</td>
+			<td>f</td>
+			<td>f</td>
+		</tr>
+	</table>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		.box1
+		{
+			width: 200px;
+			height: 200px;
+			/*
+				1，从上向下 background-image: linear-gradient(red,blue); 
+				2，从左向右  background-image: linear-gradient(to left,red,blue);
+				3，xxxdeg 度数
+				4，可以有多种颜色的渐变
+				5，可以手动指定渐变的分布情况 颜色 + 像素， 颜色 + 像素 ...
+			*/
+			/* background-image: linear-gradient(to left,red,blue); */
+
+			/* 
+				repeating-linear-gradient
+				可以平铺的线性渐变
+			*/
+			background-image: repeating-linear-gradient(red 0px, blue 50px);
+		}
+	</style>
+</head>
+
+<body>
+	<div class="box1">
+
+	</div>
+</body>
+</html>

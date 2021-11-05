@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>导航栏</title>
+	<style>
+		.outer-nav
+		{
+			width: 220px;
+		}
+		.main-list
+		{
+			padding:0px;
+			list-style:none;
+		}
+		.main-list li
+		{
+			height: 25px;
+			/* 让行内文字右移一点 */
+			padding-left: 20px;	
+		}
+		/* 设置超链接的文字和下划线 */
+		.main-list li a
+		{
+			color: #333;
+			text-decoration: none;
+		}
+		/* 鼠标移动到超链接变红 */
+		.main-list li a:hover
+		{
+			color: red;
+		}
+		.main-list li:hover
+		{
+			/* 选中一行行色 */
+			background-color: #d9d9d9;
+		}
+		/* 斜杠的样式 */
+		.cate_menu_line
+		{
+			font-size: 12px;
+			padding: 0 1px;
+		}
+	</style>
+</head>
+<body>
+	<nav class="outer-nav">
+		<ul class="main-list">
+			<li><a href="http://www.baidu.com">家用电器</a></li>
+			<li>
+				<a href="http://www.baidu.com">手机</a>
+				<span class="cate_menu_line">/</span>
+				<a href="http://www.baidu.com">运营商</a>
+				<span class="cate_menu_line">/</span>
+				<a href="http://www.baidu.com">数码</a>
+			</li>
+			<li>
+				<a href="http://www.baidu.com">电脑</a>
+				<span class="cate_menu_line">/</span>
+				<a href="http://www.baidu.com">办公</a>
+			</li>
+			<li>
+				<a href="http://www.baidu.com">家居</a>
+				<span class="cate_menu_line">/</span>
+				<a href="http://www.baidu.com">家具</a>
+				<span class="cate_menu_line">/</span>
+				<a href="http://www.baidu.com">家装</a>
+				<span class="cate_menu_line">/</span>
+				<a href="http://www.baidu.com">厨具</a>
+			</li>
+		</ul>
+	</nav>
+</body>
+</html>

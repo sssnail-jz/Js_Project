@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>网易新闻的右侧列表</title>
+	<style>
+		body
+		{
+			background-color: cornsilk;
+		}
+		.news-wrapper
+		{
+			width: 300px;
+			height: 358px;
+			background-color: #fff;
+			border-top-width: 2px;
+			border-top-style: solid;
+			border-top-color:silver;
+		}
+		/* 设置超链接的文字和下划线 */
+		.news-wrapper a
+		{
+			color: #333;
+			text-decoration: none;
+		}
+		
+		.news-list
+		{
+			margin-top: 20px;
+			/* padding: 0px; */
+			list-style: square;
+		}
+		.news-list li
+		{
+			margin-bottom: 17px;
+		}
+		.news-list a
+		{
+			color: #666666;
+			font-size: 14px;
+		}
+
+		/* 鼠标移动到超链接变红 */
+		.news-wrapper a:hover
+		{
+			color: red;
+		}
+		.news-tittle a
+		{
+			font-weight: bold;
+		}
+		.news-tittle
+		{
+			display: inline-block;
+			height: 30px;
+			border-top-width: 2px;
+			border-top-style: solid;
+			border-top-color: red;
+			margin-top: -2px;
+			padding-top: 10px;
+		}
+		.news-img .bg
+		{
+			margin-top: -30px;
+			padding-left: 30px;
+			color: white;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<div class="news-wrapper">
+			
+		<div class="news-tittle">
+			<a href="#">新闻</a>
+		</div>
+
+		<div class="news-img">
+			<a href="#">
+				<img src="../images/2.png">
+				<div class="bg">
+					总理接见！字母哥家人获希腊公民。
+				</div>
+			</a>
+		</div>
+
+		<ul class="news-list">
+			<li>
+				<a href="#">还是 24 岁的刘传兴上周加盟 NBL ！</a>
+			</li>
+			<li>
+				<a href="#">Ta变性参加女子拳击比赛！</a>
+			</li>
+			<li>
+				<a href="#">从全网顶流到拒绝“采访”！</a>
+			</li>
+			<li>
+				<a href="#">NBA 肮脏秘史！</a>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>
