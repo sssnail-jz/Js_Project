@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <p>请点击“试一试”按钮，以执行 displayDate() 函数。</p>
+
+    <button id="myBtn">试一试</button>
+
+    <p id="demo"></p>
+
+    <script>
+        // 为事件指定处理函数
+        document.getElementById("myBtn").onclick = displayDate;
+
+        function displayDate() {
+            document.getElementById("demo").innerHTML = Date();
+        }
+    </script>
+
+</body>
+
+</html>
