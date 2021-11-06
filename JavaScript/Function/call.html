@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo">aa</div>
+</body>
+
+</html>
+<script>
+    var person = {
+        fun: function(param1, param2) {
+            var text;
+            text = this.firstname + " " + this.lastname + " " + param1 + " " + param2;
+            document.getElementById("demo").innerHTML = text;
+        }
+    }
+    var person2 = {
+        firstname: "jack",
+        lastname: "zheng"
+    }
+    person.fun.call(person2, "aaa", "bbb");
+</script>

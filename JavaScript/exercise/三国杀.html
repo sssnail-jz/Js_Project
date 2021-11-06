@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background: #000;
+        }
+        
+        #container {
+            width: 150px;
+            height: 150px;
+            margin: 100px auto;
+            perspective: 800px;
+        }
+        
+        #contant {
+            transform-style: preserve-3d;
+            width: 150px;
+            margin-left: -75px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transition: all .5s;
+        }
+        
+        #contant img {
+            width: 150px;
+            height: 200px;
+            position: absolute;
+            transition: all .5s;
+            border-radius: 10px;
+        }
+        
+        #contant img.active {
+            /*  */
+        }
+    </style>
+</head>
+<div id="container">
+    <div id="contant">
+        <img src="./三国杀图片资源/1.png" alt="">
+        <img src="./三国杀图片资源/2.png" alt="">
+        <img src="./三国杀图片资源/3.png" alt="">
+        <img src="./三国杀图片资源/4.png" alt="">
+        <img src="./三国杀图片资源/5.png" alt="">
+        <img src="./三国杀图片资源/6.png" alt="">
+        <img src="./三国杀图片资源/7.png" alt="">
+        <img src="./三国杀图片资源/8.png" alt="">
+        <img src="./三国杀图片资源/9.png" alt="">
+    </div>
+</div>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    window.onload = function() {
+
+        // 获得图片容器元素
+        var oContant = document.getElementById("contant");
+        // 获得所有图片
+        var aImage = oContant.children;
+        // 为每一个图片初始化旋转角度
+        for (var i = 0; i < aImage.length; i++) {
+            aImage[i].style.transform =
+                "rotateY(" + i * 40 + "deg)" +
+                " translateZ(226px)" +
+                " rotateY(0)";
+        }
+        // 鼠标点击容器转动
+        var index = 0;
+        document.onclick = function() {
+            index++;
+            changeIndex(index);
+        }
+        changeIndex(index);
+
+        function changeIndex(index) {
+            oContant.style.transform =
+                "rotateY(" + -40 * index + "deg)";
+
+            // 当前显示的图片的序号
+            var nowImageNo = index % 9;
+            // 左面一张显示的图片的序号
+            var beforeImageNo = nowImageNo - 1;
+            // 右面一张显示的图片的序号
+            var afterImageNo = nowImageNo + 1;
+
+            // 当前显示的最后一张的时候后一张是第一张
+            if (nowImageNo == 8) {
+                afterImageNo = 0
+            }
+            // 当前显示的第一张的时候前一张是最后一张
+            if (nowImageNo == 0) {
+                beforeImageNo = 8
+            }
+
+            // 让前一张和后一张铺平显示
+            aImage[beforeImageNo].style.transform =
+                "rotateY(" + beforeImageNo * 40 + "deg)" +
+                " translateZ(226px)" +
+                " rotateY(45deg)";
+            aImage[afterImageNo].style.transform =
+                "rotateY(" + afterImageNo * 40 + "deg)" +
+                " translateZ(226px)" +
+                " rotateY(-45deg)";
+            aImage[nowImageNo].style.transform =
+                "rotateY(" + nowImageNo * 40 + "deg)" +
+                " translateZ(226px)" +
+                " rotateY(0)";
+
+            // 为当前显示的图片加特效
+            for (var i = 0; i < aImage.length; i++) {
+                aImage[i].className = "";
+            }
+            aImage[nowImageNo].className = "active";
+        }
+
+    }
+</script>

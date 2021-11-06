@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo">aa</div>
+</body>
+
+</html>
+<script>
+    const person = {
+        name: "John",
+        age: 30,
+        city: "New York"
+    };
+
+    // 直接显示对象
+    document.getElementById("demo").innerHTML = person;
+
+    // 循环遍历对象
+    var text = "";
+    for (var x in person) {
+        text += person[x] + " ";
+    }
+    document.getElementById("demo").innerHTML = text;
+
+    // Object.values()
+    var arr = Object.values(person);
+    document.getElementById("demo").innerHTML = arr;
+
+    // JSON.stringify()
+    var str = JSON.stringify(person);
+    document.getElementById("demo").innerHTML = str;
+
+    // JSON.stringify() 对函数成员字符串化
+    const person2 = {
+        name: "Jack Zheng",
+        fun: function() {
+            return 100
+        }
+    };
+    person2.fun = person2.fun.toString();
+    str = JSON.stringify(person2);
+    document.getElementById("demo").innerHTML = str;
+
+    // JSON.stringify() 数组字符串化
+    const arr2 = ["John", "Peter", "Sally", "Jane"];
+
+    let myString = JSON.stringify(arr2);
+    document.getElementById("demo").innerHTML = myString;
+</script>
