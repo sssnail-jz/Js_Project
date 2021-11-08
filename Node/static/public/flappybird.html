@@ -18,7 +18,7 @@
     <canvas id="canvas" width="800px" height="400px"></canvas>
     <div id="mark">得分：</div>
     <div id="res">
-        <img src="./游戏素材/flappyBird_奖牌.png">
+        <img src="./flappybirdimg/flappyBird_prise.png">
     </div>
 
     <script>
@@ -32,10 +32,10 @@
         var birdY = 100;
         var birdTimer = null;
 	
-        img.src = "./游戏素材/flappyBird_上.png";
+        img.src = "./flappybirdimg/flappyBird_up.png";
         img.onload = function() {
             // 只要更换图片路径就会进入这个函数，
-            // 这里要求只开启一个timer来做下滑
+            // 这里要求只开启一个timer来做down滑
             if (birdTimer == null) {
                 birdTimer = setInterval(function() {
                     if (birdY <= 355) {
@@ -54,7 +54,7 @@
         }
 
         document.onmousedown = function() {
-            img.src = "./游戏素材/flappyBird_下.png";
+            img.src = "./flappybirdimg/flappyBird_down.png";
             birdY = birdY - 30;
             if (birdY <= 0) {
                 birdY = 0;
@@ -62,7 +62,7 @@
         };
 
         document.onmouseup = function() {
-            img.src = "./游戏素材/flappyBird_上.png";
+            img.src = "./flappybirdimg/flappyBird_up.png";
         };
 
         var columnArr = [];
@@ -78,8 +78,8 @@
                     column.positionY = -Math.round(Math.random() * 100 + 100);
                     column.imgA = new Image();
                     column.imgB = new Image();
-                    column.imgA.src = "./游戏素材/flappyBird_column_down.png";
-                    column.imgB.src = "./游戏素材/flappyBird_column_up.png";
+                    column.imgA.src = "./flappybirdimg/flappyBird_column_down.png";
+                    column.imgB.src = "./flappybirdimg/flappyBird_column_up.png";
                     column.id = new Date().getTime();
                     columnArr.push(column);
 
