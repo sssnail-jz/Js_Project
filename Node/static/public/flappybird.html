@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #canvas {
+            border: 1px;
+            border-style: solid;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas" width="800px" height="400px"></canvas>
+    <div id="mark">得分：</div>
+    <div id="res">
+        <img src="./游戏素材/flappyBird_奖牌.png">
+    </div>
+
+    <script>
+        var canvas = document.getElementById("canvas");
+        var contentx = canvas.getContext("2d");
+
+        // 创建一个图片
+        var img = new Image();
+
+        var birdX = 200;
+        var birdY = 100;
+        var birdTimer = null;
+	
+        img.src = "./游戏素材/flappyBird_上.png";
+        img.onload = function() {
+            // 只要更换图片路径就会进入这个函数，
+            // 这里要求只开启一个timer来做下滑
+            if (birdTimer == null) {
+                birdTimer = setInterval(function() {
+                    if (birdY <= 355) {
+                        birdY++;
+                    }
+                    contentx.clearRect(0, 0, 800, 400);
+                    // if (columnArr.length > 0) {
+                    //     if (columnArr[0].positionX < -100) {
+                    //         columnArr.pop();
+                    //     }
+                    // }
+                    drownColumn();
+                    contentx.drawImage(img, birdX, birdY);
+                }, 15);
+            }
+        }
+
+        document.onmousedown = function() {
+            img.src = "./游戏素材/flappyBird_下.png";
+            birdY = birdY - 30;
+            if (birdY <= 0) {
+                birdY = 0;
+            }
+        };
+
+        document.onmouseup = function() {
+            img.src = "./游戏素材/flappyBird_上.png";
+        };
+
+        var columnArr = [];
+        var columnTimer = null;
+
+        // 创建柱子启动函数，此函数只会被启动一次，内部将启动一个
+        // timer
+        function createColumn() {
+            if (columnTimer == null) {
+                columnTimer = setInterval(function() {
+                    var column = {};
+                    column.positionX = 800;
+                    column.positionY = -Math.round(Math.random() * 100 + 100);
+                    column.imgA = new Image();
+                    column.imgB = new Image();
+                    column.imgA.src = "./游戏素材/flappyBird_column_down.png";
+                    column.imgB.src = "./游戏素材/flappyBird_column_up.png";
+                    column.id = new Date().getTime();
+                    columnArr.push(column);
+
+                }, 2000);
+            }
+        }
+
+        createColumn();
+        var mark = null;
+        var same = null;
+
+        function drownColumn() {
+
+            for (var i = 0; i < columnArr.length; i++) {
+                columnArr[i].positionX--;
+                contentx.drawImage(columnArr[i].imgA, columnArr[i].positionX, columnArr[i].positionY);
+                contentx.drawImage(columnArr[i].imgB, columnArr[i].positionX, columnArr[i].positionY + 400);
+
+                if (birdX - 70 == columnArr[i].positionX) {
+                    if (columnArr[i].id != same) {
+                        mark++;
+                        same = columnArr[i].id;
+                        document.getElementById("mark").innerHTML = "得分：" + mark;
+                    }
+                }
+
+                // 判断撞壁逻辑
+                // 增加死亡画面
+            }
+        }
+    </script>
+
+</body>
+
+</html>

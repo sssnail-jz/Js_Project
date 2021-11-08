@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		.background
+		{
+			width: 500px;
+			height: 500px;
+			background-color: blanchedalmond;
+			/*
+				设置背景的范围
+				background-clip
+					可选值：
+					1）border-box 默认值，背景会出现在边框的下面
+					2）padding-box 背景不会出现在边框下面，只出现在内容区和内边距
+					3）content-box 背景只会出现在内容区
+				background-origin
+					背景图片偏移量计算的原点	
+					可选值：
+					1）padding-box background-position 从内边距开始计算
+					2）contenent-box 从内容区开始计算
+					3）border-box 从边框处开始计算
+				background-size
+					设置背景图片的大小
+					1）第一个值表示宽度
+					2）第二个值表示高度
+					3）如果只写一个，另一个值会自动调整
+					4）还可以设置 100% 100% auto
+					5）cover 图片比例不变，将元素铺满
+					6）contain 图片比例不变，将图片在元素中完整显示
+				background-a't't'achment
+					设置图片是否跟着元素移动
+					1）scroll 默认值，跟着移动
+					2）fixed 不跟随移动
+			*/
+			/*
+				background 背景相关的简写属性：
+				1）background-size 必须写在 background-position 的后面，使用/隔开
+				2）background-origin 必须在 background-clip 的前边
+			*/
+		}
+	</style>
+</head>
+<body>
+	<div class="background"></div>
+</body>
+</html>

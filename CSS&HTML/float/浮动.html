@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		.box1
+		{
+			width: 100px;
+			height: 100px;
+			background-color: blue;
+			float: left;
+		}
+		.box2
+		{
+			width: 100px;
+			height: 100px;
+			background-color: rebeccapurple;
+			float: left;
+		}
+		.box3
+		{
+			width: 100px;
+			height: 100px;
+			background-color: yellow;
+			float: left;
+		}
+	</style>
+</head>
+<body>
+	<!--
+		1，元素浮动将脱离文档流
+		2，没有浮动的元素对将要浮动的元素来说像一堵墙
+		3，浮动元素不会超过它上边浮动元素的兄弟元素，顶多就是平行
+		
+	-->
+	<div class="box1"></div>
+	<div class="box2"></div>
+	<div class="box3"></div>
+</body>
+</html>

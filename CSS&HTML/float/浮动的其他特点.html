@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		.box
+		{
+			width: 100px;
+			height: 100px;
+			background-color: teal;
+			
+			/*
+				1，浮动元素不会盖住文字，文字会坏绕在浮动元素周围  
+				2，元素脱离文档流之后的特点：
+					块元素：
+					1）块元素不再独占一行
+					2）脱离文档流以后，块的宽度和高度为被内容撑开
+					行内元素：
+					1，行内元素脱离文档流之后会变为块元素
+					2，可以设置宽度和高度，默认宽度和高度为被内容撑开
+	
+			*/
+			float: left;
+		}
+		.pp
+		{
+			margin-left: 0px;
+			margin-top: 0px;
+			padding: 0px;
+
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+
+	<p class="pp">
+		在苍茫的大海上，狂风卷集着乌云。在乌云和大海之间，海燕像黑色的闪电，在高傲地飞翔。
+		一会儿翅膀碰着波浪，一会儿箭一般地直冲向乌云，它叫喊着，──就在这鸟儿勇敢的叫喊声里，乌云听出了欢乐。
+		在这叫喊声里──充满着对暴风雨的渴望！在这叫喊声里，乌云听出了愤怒的力量、热情的火焰和胜利的信心。
+		海鸥在暴风雨来临之前呻吟着，──呻吟着，它们在大海上飞窜，想把自己对暴风雨的恐惧，掩藏到大海深处。
+		海鸭也在呻吟着，──它们这些海鸭啊，享受不了生活的战斗的欢乐：轰隆隆的雷声就把它们吓坏了。
+		蠢笨的企鹅，胆怯地把肥胖的身体躲藏到悬崖底下……只有那高傲的海燕，勇敢地，自由自在地，在泛起白沫的大海上飞翔！
+		乌云越来越暗，越来越低，向海面直压下来，而波浪一边歌唱，一边冲向高空，去迎接那雷声。
+	</p>
+</body>
+</html>

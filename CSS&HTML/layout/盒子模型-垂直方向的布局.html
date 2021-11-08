@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		.box1
+		{
+			width: 400px;
+			height: 100px;
+			background-color: red;
+		}
+		.box2
+		{
+			width: 200px;
+			height: 200px;
+			background-color: blue;
+			overflow: visible;
+		}
+	</style>
+</head>
+<body>
+	<!--
+		1，默认情况下父元素的高度被内容撑开
+		2，子元素是在父元素的内容区排列的，子元素超出父元素就会冲出父元素
+			使用 voerflow 来处理溢出：
+			1）overflow：visible/hidden
+			2）overf: scroll 生成两个滚动条
+			3）overflow：auto 按需生成滚动条
+	-->
+	<div class="box1">
+		<div class="box2">
+
+		</div>
+	</div>
+</body>
+</html>
