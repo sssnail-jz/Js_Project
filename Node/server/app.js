@@ -1,5 +1,5 @@
 const http = require('http');
-const yrl = require('url');
+const url = require('url');
 
 // app对象就是网站服务器对象
 const app = http.createServer();
