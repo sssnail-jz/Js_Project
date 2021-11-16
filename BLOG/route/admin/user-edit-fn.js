@@ -22,6 +22,8 @@ module.exports = async function(req, res, next){
 	req.body.password = password;
 	await User.create(req.body);
 	
+	// req.app.locals.userInfo = await User.findOne({email: req.body.email});
+	
 	// 将页面重定向到用户列表页面
 	res.redirect('/admin/user');
 }
