@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			function ajax(option){
+				var xhr = new XMLHttpRequest();
+				
+				// 将 json 格式的参数拼接为urlencoded格式
+				var params = '';
+				for(var attr in option.data){
+					params += attr + '=' + option.data[attr] + '&';
+				}
+				params = params.substr(0, params.length - 1);
+				
+				// 配置 open （get）
+				if(option.type == 'get'){
+					option.url = option.url + '?' + params;
+				}
+				xhr.open(option.type, option.url);
+				
+				// 配置 send （post）
+				if(option.type == 'post'){
+					// 配置 post 参数的编码格式
+					var contentType = option.header['Content-Type'];
+					xhr.setRequestHeader('Content-Type', contentType);
+					
+					if(contentType == 'application/x-www-form-urlencoded'){
+						xhr.send(params);
+					}else{
+						xhr.send(JSON.stringify(option.data));
+					}
+				}
+				else{ // get 方法不需要配置 send 函数
+					xhr.send();
+				}
+
+				xhr.onload = function(){
+					if(xhr.status == 200){
+						option.success(xhr);
+					}else{
+						option.error(xhr);
+					}	
+				};
+			}
+
+			ajax({
+				type: 'post',
+				url: 'http://localhost:3000/first',
+				data: {
+					name: 'Jack Zheng',
+					age: 100
+				},
+				header: {
+					'Content-Type': 'application/json'
+				},
+				success: function(result){
+					document.body.innerHTML = 'success : ' + 
+					result.responseText;
+				},
+				error: function(result){
+					document.body.innerHTML = 'error : ' + 
+					result.responseText;
+				}
+			});
+			
+		</script>
+	</body>
+</html>

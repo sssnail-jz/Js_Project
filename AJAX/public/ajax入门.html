@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		var xhr = new XMLHttpRequest();
+		xhr.open('post', 'http://localhost:3000/jsontest');
+		xhr.setRequestHeader('Content-Type', 'application/json');
+		xhr.send(JSON.stringify({name: 'lisi', password: 123}));
+		xhr.onload = function(){
+			document.body.innerHTML = xhr.responseText;
+		};
+		</script>
+	</body>
+</html>
