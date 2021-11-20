@@ -58,17 +58,17 @@ app.use('/admin', admin);
 
 // 设置错误处理消息中间件
 app.use(function(err, req, res, next){
-	// var result = JSON.parse(err);
-	// // 拼接路由参数
-	// let params = [];
-	// for(var attr in result){
-	// 	if(attr != 'path'){
-	// 		params.push(attr + '=' + result[attr]);
-	// 	}
-	// }
-	// // 组合路由参数
-	// res.redirect(`${result.path}?${params.join('&')}`);
-	console.log(err);
+	var result = JSON.parse(err);
+	// 拼接路由参数
+	let params = [];
+	for(var attr in result){
+		if(attr != 'path'){
+			params.push(attr + '=' + result[attr]);
+		}
+	}
+	// 组合路由参数
+	res.redirect(`${result.path}?${params.join('&')}`);
+	// console.log(err);
 });
 
 // 监听端口
