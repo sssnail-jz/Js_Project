@@ -1,6 +1,9 @@
 const {User}= require('../../model/user');
 module.exports = async function(req, res){
 	
+	// 表示当前页面应该是用户管理页面
+	req.app.locals.currentLink = 'user';
+	
 	var pageNo = req.query.page || 1;
 	var pagesize = 10;
 	var userCount = await User.countDocuments({});

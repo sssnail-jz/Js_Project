@@ -19,4 +19,14 @@ admin.post('/user-modify', require('./admin/user-modify-fn'));
 
 // 删除
 admin.post('/delete', require('./admin/delete'));
+
+// 文章列表
+admin.get('/article', require('./admin/articlePage'));
+
+// 修改文章
+admin.get('/article-edit', require('./admin/article-edit'));
+
+// 文章提交
+admin.post('/article-add', require('./admin/article-add'));
+
 module.exports = admin;

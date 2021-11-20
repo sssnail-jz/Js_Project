@@ -13,9 +13,16 @@ module.exports = async function(req, res){
 		
 		if(isvalid){
 			req.session.username = user.username;
+			req.session.role = user.role;
+			
 			// 将用户信息保存到全局对象 app 中
 			req.app.locals.userInfo = user;
-			res.redirect('/admin/user');
+			
+			if(user.role == 'admin'){
+				res.redirect('/admin/user');
+			}else{
+				res.redirect('/home/');
+			}
 		}else{
 			res.status(400).render('admin/error', {msg:'邮箱地址或者密码错误'});
 		}
