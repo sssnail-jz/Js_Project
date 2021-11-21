@@ -76,6 +76,7 @@ textarea {
 	height: 60px;
 	background: #3f434c;
 /* 	box-sizing: border-box; */
+
 }
 
 
@@ -98,10 +99,10 @@ textarea {
 	height: 60px;
 }
 
-.navigation li {
+.navigation > li {
 	height: 60px;
 	float: left;
-	margin-left: 14px;
+	margin-left: 0px;
 }
 
 .navigation li a {
@@ -113,10 +114,25 @@ textarea {
 	font-size: 14px;
 	transition: all 0.4s;
 }
+
 .navigation li a:hover,
 .navigation li .active {
 	background: #ff7300;
 }
+
+#login-menu-wraper{
+	position: absolute;
+	z-index: 999;
+	display: none;
+	background: #3f434c;
+}
+
+/* 设置弹出下拉框 */
+#li-login:hover #login-menu-wraper
+{
+	display: block;
+}
+
 /* 网站导航结束 */
 
 /* 文章信息开始 */

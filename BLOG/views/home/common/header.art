@@ -8,16 +8,27 @@
 			<!-- 网站logo结束 -->
 			<!-- 网站导航开始 -->
 			<ul class="navigation navigation-right">
-				{{if userInfo}}
 				<li>
-					<a href="/home/">{{userInfo.username}}</a>
+					<a href="/home/">发表文章</a>
 				</li>
-				<li>
-					<a href="/admin/logout">退出</a>
-				</li>	
-				{{/if}}
-				<li>
-					<a href="/admin/login">登录</a>
+				<li id = "li-login">
+					{{if userInfo}}
+						<a href="/admin/login">信息</a>
+					{{else}}
+						<a href="/admin/login">登录</a>
+					{{/if}}
+					<div id = "login-menu-wraper">
+						<ul>
+						{{if userInfo}}
+							<li>
+								<a href="/home/">用户</a>
+							</li>
+							<li>
+								<a href="/admin/logout"> 退出 </a>
+							</li>
+						{{/if}}
+						</ul>
+					</div>
 				</li>
 			</ul>
 			<!-- 网站导航结束 -->
