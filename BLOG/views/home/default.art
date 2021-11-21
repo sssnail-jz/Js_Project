@@ -5,29 +5,49 @@
 {{/block}}
 
 {{block 'main'}}
+
 	{{include './common/header.art'}}
-	<!-- 文章列表开始 -->
-	<ul class="list w1100">
+	
+	<div class = "index-content clearfix">
+	<!-- 文章列表 -->
+	<ul class="list">
 		{{each articles.records}}
-		<li class="{{$index%2 == 0? 'fl' : 'fr'}}">
-			<a href="/home/article?id={{@$value._id}}" class="thumbnail">
-				<img src="{{$value.cover}}">
-			</a>
-			<div class="content">
+		<li class="list-item">
+		<div class = "elementWraper">
+			<div class = "element-img">
+				<a href="/home/article?id={{@$value._id}}" class="thumbnail">
+					<img src="{{$value.cover}}">
+				</a>
+			</div>
+			<div class="article-content">
 				<a class="article-title" href="article.html">{{$value.title}}</a>
 				<div class="article-info">
 					<span class="author">{{$value.author}}</span>
 					<span>2020-09-10</span>
 				</div>
 				<div class="brief">
-					{{@$value.content.replace(/<[^>]+>/g, '').substr(0,90) + '...'}}
+					{{@$value.content.replace(/<[^>]+>/g, '').substr(0,50) + '...'}}
 				</div>
 			</div>
+		</div>
+			
 		</li>
 		{{/each}}
 	</ul>
 	<!-- 文章列表结束 -->
+	
+	<!-- 右侧卡片 -->
+		<div class = "kard-day">
+			<span style="color:rgba(0,0,0,0.65);font-size:14px;font-weight:bold;margin-bottom:14px;display:block">每日一句</span>
+			<img src="images/day.jpg" class="item-img" style="width: 100%; height: auto; margin-bottom: 14px;">
+			<span>身在井隅，心向璀璨。</span>
+		</div>
+		<div class = "kard-rank">
+			<span style="color:rgba(0,0,0,0.65);font-weight:bold;font-size:14px">优秀博主</span>
+		</div>
+	<!-- 右侧卡片结束 -->
 
+	</div>
 	<!-- 分页开始 -->
 	<div class="page w1100">
 		{{if articles.page > 1}}

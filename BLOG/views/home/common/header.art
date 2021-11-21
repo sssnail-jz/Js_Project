@@ -1,18 +1,23 @@
 <!-- 头部框架开始 -->
 	<div class="header">
-		<div class="w1100">
+		<div class="header-content">
 			<!-- 网站logo开始 -->
-			<h1 class="logo fl">
-				<a href="default.html"><img src="images/logo.png" alt="黑马程序员"></a>
+			<h1 class="logo logo-left">
+				<a href="/home/"><img src="images/logo.png" alt="哲"></a>
 			</h1>
 			<!-- 网站logo结束 -->
 			<!-- 网站导航开始 -->
-			<ul class="navigation fr">
+			<ul class="navigation navigation-right">
+				{{if userInfo}}
 				<li>
-					<a href="index.html">首页</a>
+					<a href="/home/">{{userInfo.username}}</a>
 				</li>
 				<li>
-					<a href="#">登录</a>
+					<a href="/admin/logout">退出</a>
+				</li>	
+				{{/if}}
+				<li>
+					<a href="/admin/login">登录</a>
 				</li>
 			</ul>
 			<!-- 网站导航结束 -->

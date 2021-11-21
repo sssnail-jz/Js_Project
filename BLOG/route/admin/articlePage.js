@@ -11,7 +11,7 @@ module.exports = async function(req, res){
 	// page: 指定当前页
 	// size: 指定每页显示的数据条数
 	// display: 当前显示的页码
-	var articles = await pagination(Article).find().page(page).size(2).display(3).exec();
+	var articles = await pagination(Article).find().page(page).size(10).display(3).exec();
 	var articleCount = await Article.countDocuments({});
 	
 	res.render('admin/article',{
