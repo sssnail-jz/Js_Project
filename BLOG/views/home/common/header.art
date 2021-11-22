@@ -8,7 +8,7 @@
 			<!-- 网站logo结束 -->
 			<!-- 网站导航开始 -->
 			<ul class="navigation navigation-right">
-				<li>
+				<li id = "li-write-article">
 					<a href="/home/">发表文章</a>
 				</li>
 				<li id = "li-login">

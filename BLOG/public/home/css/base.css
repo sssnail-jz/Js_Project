@@ -70,11 +70,15 @@ textarea {
 
 /* 头部框架开始 */
 .header {
-	width: 1100px;
-	padding-left: 240px;
-	padding-right: 240px;
+	padding-left: 185px;
+	padding-right: 185px;
 	height: 60px;
 	background: #3f434c;
+	
+	z-index: 999;
+	position: sticky;
+	top: 0;
+	
 /* 	box-sizing: border-box; */
 
 }
@@ -118,6 +122,13 @@ textarea {
 .navigation li a:hover,
 .navigation li .active {
 	background: #ff7300;
+}
+
+#li-write-article a{
+	background-color: #007AFF;
+}
+#li-write-article a:hover{
+	background-color: #ff7300;
 }
 
 #login-menu-wraper{

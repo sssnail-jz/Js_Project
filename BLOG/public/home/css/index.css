@@ -8,12 +8,42 @@
 }
 
 .index-content{
-	width: 1100px;
 	margin: 0px, 0px;
 	margin-top: 10px;
-	padding-left: 240px;
-	padding-right: 240px;
+	padding-left: 185px;
+	padding-right: 185px;
 	position: relative;
+}
+
+/* 浮动 tab */
+.float-tab{
+	color: white;
+	background: #3f434c;
+	position: sticky;
+	float: left;
+	top: 60px;
+	z-index: 999;
+	width: 100px;
+	margin-left: -110px;
+	margin-top: 410px;
+	border-radius:5px 5px 5px 5px;
+	opacity:0.8;
+}
+
+.float-tab > ul > li {
+	display: block;
+	text-align: center;
+	line-height: 60px;
+	border: 1px;
+	border-style: solid;
+	border-color: white;
+	width: 100%;
+	height: 60px;
+}
+
+.float-tab > ul > li:hover{
+	background: #ff7300;
+	cursor: pointer;
 }
 
 /* 中间滚动区域 */
@@ -49,7 +79,6 @@
 .right-top{
 	height: 50%;
 	padding-left: 10px;
-	padding-right: 10px;
 	border-radius:20px 20px 20px 20px;
 }
 
@@ -58,7 +87,6 @@
 	margin-top: 10px;
 	margin-bottom: 0px;
 	padding-left: 10px;
-	padding-right: 10px;
 	border-radius:20px 20px 20px 20px;
 }
 
@@ -72,7 +100,7 @@
 
 .list li {
 	width: 100%;
-	height: 220px;
+	height: 180px;
 	background: #FFF;
 	/* margin-top: 30px; */
 	padding: 20px;
@@ -130,7 +158,7 @@
 
 .kard-rank{
 	width: 270px;
-	height: 360px;
+	height: 350px;
 	margin-top: 50px;
 	float: right;
 	margin-top: 10px;
@@ -139,6 +167,20 @@
 	padding-left: 20px;
 	padding-right: 20px;
 	border-radius:20px 20px 20px 20px;
+}
+
+.kard-rank > .swiper-container{
+	margin-top: 20px;
+}
+
+.personal-info{
+	margin-top: 20px;
+	margin-left: 20px;
+}
+.personal-info li{
+	font-size: 16px;
+	width: 100%;
+	height: 40px;
 }
 
 /* 分页开始 */
