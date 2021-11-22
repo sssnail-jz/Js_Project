@@ -197,14 +197,16 @@
 		prevButton: '.swiper-button-prev',
 	    paginationClickable: true,
 	    spaceBetween: 30,
+		loop:true,
 	    centeredSlides: true,
-	    autoplay: 4000,	
+	    autoplay: 6000,	
 	    autoplayDisableOnInteraction: false
 	});
 	var swiper = new Swiper('.kard-rank > .swiper-container', {
 	    paginationClickable: true,
 		direction: 'vertical',
 	    spaceBetween: 30,
+		loop:true,
 	    centeredSlides: true,
 	    autoplay: 6000,	
 	    autoplayDisableOnInteraction: false

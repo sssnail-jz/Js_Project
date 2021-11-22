@@ -1,0 +1,15 @@
+.index-article-new{
+	position: relative;
+}
+
+.content-container{
+	margin: auto;
+	
+	width: 70%;
+}
+
+.ope-contatiner{
+	height: 700px;
+	width: 70%;
+	margin: auto;
+}

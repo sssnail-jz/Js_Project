@@ -66,8 +66,6 @@ textarea {
 	margin-bottom: 10px;
 }
 
-
-
 /* 头部框架开始 */
 .header {
 	padding-left: 185px;
@@ -78,9 +76,6 @@ textarea {
 	z-index: 999;
 	position: sticky;
 	top: 0;
-	
-/* 	box-sizing: border-box; */
-
 }
 
 
