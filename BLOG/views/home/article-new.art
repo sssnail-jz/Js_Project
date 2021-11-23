@@ -3,8 +3,6 @@
 {{block 'css'}}
 	<link rel="stylesheet" href="/home/css/index.css">
 	<link rel="stylesheet" href="/home/css/article-new.css">
-	<!-- Link Swiper's CSS -->
-	<link rel="stylesheet" href="/admin/lib/Swiper-3.4.2/dist/css/swiper.min.css">
 	<link rel="stylesheet" type="text/css" href="/admin/lib/ckeditor5-31.0.0/sample/styles.css">
 {{/block}}
 
@@ -16,9 +14,34 @@
 		
 		<!-- 右边编辑区 -->
 		<div class = "content-container">
-			    <textarea class="form-control" name="content" id="editor"></textarea>
+			    <textarea form = "form-container" class="form-control" name="content" id="editor"></textarea>
 		</div>
 		<div class = "ope-contatiner">
+			<div class = "ope-contatiner-inner">
+				<form id="form-container" enctype="multipart/form-data" action="/home/article-submit" method="post">
+					<div class="form-group">
+						<span>文章标题：</span>
+						<input type="text" name="title" class="form-control" placeholder="请输入文章标题">
+					</div>
+					<div class="form-group">
+						<span>作者：</span>
+						<!-- 当前登录用户的ID进行关联 -->
+						<input type="text" name="author" value="{{@userInfo._id}}" class="form-control" readonly>
+					</div>
+					<div class="form-group">
+						<span>发表时间：</span>
+						<input type="date" name="publishDate" class="form-control">
+					</div>
+					
+					<div class="form-group">
+					   <span for="exampleInputFile">封面：</span>
+					   <input type="file" name="cover" id="file">
+					   <div class="thumbnail-waper">
+						   <img style = "visibility:hidden;" class="img-thumbnail" src="" id="preview">
+					   </div>
+					</div>
+				</form>
+			</div>
 		</div>
 	</div>
 	
@@ -43,16 +66,18 @@
         // const editorData = editor.getData();
 		
 		// 将选择的图片实时显示
-		/*
+		
 		var file = document.querySelector('#file');
 		var preview = document.querySelector('#preview');
 		file.onchange = function(){
+				preview.style.visibility = 'visible';
 				var reader = new FileReader();
 				reader.readAsDataURL(this.files[0]);
 				reader.onload = function(){
 					preview.src = reader.result;
 				};
+				
 		};
-		*/
+		
     </script>
 {{/block}}

@@ -4,7 +4,7 @@ var articleSchema = new mongoose.Schema({
 	title: {
 		type: String,
 		maxlength: 20,
-		minlength: 4,
+		minlength: 1,
 		required: [true, '请填写文章标题']
 	},
 	author: {

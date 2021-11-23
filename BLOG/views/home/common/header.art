@@ -8,10 +8,16 @@
 			<!-- 网站logo结束 -->
 			<!-- 网站导航开始 -->
 			<ul class="navigation navigation-right">
+				{{if articleNew == null && userInfo}}
+					<li id = "li-write-article">
+						<a href="/home/article-new">发表文章</a>
+					</li>
+				{{/if}}
 				{{if articleNew}}
-				<li id = "li-write-article">
-					<a href="/home/article-new">发表文章</a>
-				</li>
+					<li id = "li-write-article">
+						<a href="#" 
+						onclick="document.getElementById('form-container').submit();return false;">发布</a>
+					</li>
 				{{/if}}
 				<li id = "li-login">
 					{{if userInfo}}
@@ -23,7 +29,8 @@
 						<ul>
 						{{if userInfo}}
 							<li>
-								<a href="/home/">用户</a>
+								<!-- 这里 将 id 转换为 ObjectId 在进行比较 -->
+								<a href="/home/userinfo?id={{userInfo._id.toString()}}">用户</a>
 							</li>
 							<li>
 								<a href="/admin/logout"> 退出 </a>
@@ -36,9 +43,9 @@
 			<!-- 网站导航结束 -->
 		</div>
 	</div>
-	{{if articleNew}}
-	<div style = "padding:0; margin:0;">
-		<img src = "images/background.png" style = "width: 100%;">
-	</div>
+	{{if (articleNew == null) && (userinfoshow == null)}}
+		<div style = "padding:0; margin:0;">
+			<img src = "images/background.png" style = "width: 100%;">
+		</div>
 	{{/if}}
 <!-- 头部框架结束 -->

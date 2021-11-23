@@ -6,7 +6,6 @@ module.exports = async function(req, res){
 	var articles = await pagination(Article).find().page(page).size(4).display(5).exec();	
 		
 	res.render('home/default', {
-		articles: articles,
-		articleNew: true
+		articles: articles
 		});
 }

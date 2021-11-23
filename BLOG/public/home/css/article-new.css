@@ -1,15 +1,81 @@
+/* 包含内容区和操作区的容器 */
 .index-article-new{
 	position: relative;
 }
 
+/* 内容区容器 */
 .content-container{
 	margin: auto;
 	
 	width: 70%;
 }
 
+/* 操作区容器 */
 .ope-contatiner{
-	height: 700px;
+	height: 600px;
 	width: 70%;
 	margin: auto;
+}
+
+/* 操作区内部容器 */
+.ope-contatiner-inner{
+	width: 80%;
+	height: 100%;
+	margin: auto;
+	background: #FFF;
+}
+
+.form-group{
+	height: 80px;
+	padding: 20px;
+	position: relative;
+}
+
+.form-group span{
+	width: 20%;
+	display: inline-block;
+	/* 为了使文字居中，蒙的，暂时不知道原因 */
+	margin-top: 5px;
+	height: 100%;
+}
+
+.form-group input{
+	display: inline-block;
+	outline-style: none ;
+	border: 1px solid #ccc; 
+	border-radius: 3px;
+	padding: 15px 15px;
+	top: 15px;
+	bottom: 15px;
+	
+	position: absolute;
+	left: 100px;
+	
+	width: 70%;
+	font-size: 14px;
+	font-weight: 700;
+	font-family: "Microsoft soft";
+}
+
+.form-group input:focus{
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
+}
+
+.thumbnail-waper{
+	border: 1px solid gray;
+	overflow: hidden;
+	margin-top: 5px;
+	width: 400px;
+	height: 250px;
+	position: absolute;
+	left: 100px;
+	border-radius:5px 5px 5px 5px;
+}
+
+.img-thumbnail{
+	width: 100%;
+	height: 100%;
 }

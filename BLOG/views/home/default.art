@@ -79,7 +79,7 @@
 				</a>
 			</div>
 			<div class="article-content">
-				<a class="article-title" href="article.html">{{$value.title}}</a>
+				<a class="article-title" href="/home/article?id={{@$value._id}}">{{$value.title}}</a>
 				<div class="article-info">
 					<span class="author">{{$value.author}}</span>
 					<span>2020-09-10</span>
