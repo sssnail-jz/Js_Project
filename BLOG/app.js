@@ -12,7 +12,7 @@ const morgan = require('morgan');
 const config = require('config');
 
 // 导入 art-template 模板引擎
-// const template = require('art-template');
+const template = require('art-template');
 // dataformat
 // const dateFormat = require('dateformat');
 

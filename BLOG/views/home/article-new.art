@@ -3,7 +3,6 @@
 {{block 'css'}}
 	<link rel="stylesheet" href="/home/css/index.css">
 	<link rel="stylesheet" href="/home/css/article-new.css">
-	<link rel="stylesheet" type="text/css" href="/admin/lib/ckeditor5-31.0.0/sample/styles.css">
 {{/block}}
 
 {{block 'main'}}
@@ -14,7 +13,10 @@
 		
 		<!-- 右边编辑区 -->
 		<div class = "content-container">
-			    <textarea form = "form-container" class="form-control" name="content" id="editor"></textarea>
+			<textarea form = "form-container" 
+			class="form-control" 
+			name="content" 
+			id="editor"></textarea>
 		</div>
 		<div class = "ope-contatiner">
 			<div class = "ope-contatiner-inner">
@@ -48,23 +50,15 @@
 {{/block}}
 
 {{block 'script'}}
-    <script src="/admin/lib/ckeditor5-31.0.0/build/ckeditor.js"></script>
+    <script src="/admin/lib/ckeditor/ckeditor.js"></script>
+	<script src="/admin/lib/ckeditor/samples/js/sample.js"></script>
+	<script>
+		initSample();
+	</script>
     <script type="text/javascript">
-    
-        let editor;
+	
+		CKEDITOR.replace( 'editor' );
 
-        ClassicEditor
-                .create( document.querySelector('#editor'))
-                .then(newEditor => {
-                    editor = newEditor;
-                })
-                .catch( error => {
-                    console.error( error );
-                });
-
-        // 获取数据
-        // const editorData = editor.getData();
-		
 		// 将选择的图片实时显示
 		
 		var file = document.querySelector('#file');
@@ -76,8 +70,6 @@
 				reader.onload = function(){
 					preview.src = reader.result;
 				};
-				
 		};
-		
     </script>
 {{/block}}

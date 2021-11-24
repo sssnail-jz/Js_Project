@@ -2,6 +2,7 @@
 
 {{block 'css'}}
 	<link rel="stylesheet" href="/home/css/article.css">
+	<link rel="stylesheet" href="/admin/lib/ckeditor/plugins/codesnippet/lib/highlight/styles/tomorrow-night.css">
 {{/block}}
 
 {{block 'main'}}
@@ -44,6 +45,7 @@
 								<span>用户邮箱</span>
 							</div>
 							<div class="comment-content">
+								
 								{{$value.content}}
 							</div>
 						</div>
@@ -55,5 +57,10 @@
 		</div>
 	</div>
 	<!-- 文章框架结束 -->
+{{/block}}
+
+{{block 'script'}}
+	<script src="/admin/lib/ckeditor/plugins/codesnippet/lib/highlight/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
 {{/block}}
 	

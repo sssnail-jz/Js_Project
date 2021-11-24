@@ -12,21 +12,23 @@
 
 /* 操作区容器 */
 .ope-contatiner{
-	height: 600px;
+	height: 500px;
 	width: 70%;
 	margin: auto;
 }
 
 /* 操作区内部容器 */
 .ope-contatiner-inner{
-	width: 80%;
+	width: 100%;
 	height: 100%;
 	margin: auto;
+	margin-top: 20px;
 	background: #FFF;
 }
 
 .form-group{
-	height: 80px;
+	height: 40px;
+	width: 50%;
 	padding: 20px;
 	position: relative;
 }
@@ -68,8 +70,8 @@
 	border: 1px solid gray;
 	overflow: hidden;
 	margin-top: 5px;
-	width: 400px;
-	height: 250px;
+	width: 300px;
+	height: 180px;
 	position: absolute;
 	left: 100px;
 	border-radius:5px 5px 5px 5px;
