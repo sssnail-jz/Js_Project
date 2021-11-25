@@ -84,3 +84,10 @@ body {
 	margin: 0px;
 }
 
+.article-oper a{
+	font-size: 14px;
+}
+
+.article-oper a:hover{
+	cursor: pointer;
+}

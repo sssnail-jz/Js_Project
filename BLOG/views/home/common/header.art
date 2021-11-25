@@ -8,7 +8,7 @@
 			<!-- 网站logo结束 -->
 			<!-- 网站导航开始 -->
 			<ul class="navigation navigation-right">
-				{{if articleNew == null && userInfo}}
+				{{if articleNew == null && userInfo && articleMod == null}}
 					<li id = "li-write-article">
 						<a href="/home/article-new">发表文章</a>
 					</li>
@@ -17,6 +17,12 @@
 					<li id = "li-write-article">
 						<a href="#" 
 						onclick="document.getElementById('form-container').submit();return false;">发布</a>
+					</li>
+				{{/if}}
+				{{if articleMod}}
+					<li id = "li-write-article">
+						<a href="#" 
+						onclick="document.getElementById('form-container').submit();return false;">修改</a>
 					</li>
 				{{/if}}
 				<li id = "li-login">

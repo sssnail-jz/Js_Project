@@ -69,7 +69,11 @@
 								<span>{{$value.publishDate}}</span>
 							</div>
 							<div class="brief">
-								{{@$value.content.replace(/<[^>]+>/g, '').substr(0,50) + '...'}}
+								{{@$value.content.replace(/<[^>]+>/g, '').substr(0,40) + '...'}}
+							</div>
+							<div class = "article-oper">
+								<a class = "article-mod" href = "/home/article-mod?id={{@$value._id}}">修改</a>
+								<a>删除</a>
 							</div>
 						</div>
 					</li>
