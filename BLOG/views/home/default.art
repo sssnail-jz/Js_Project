@@ -4,6 +4,8 @@
 	<link rel="stylesheet" href="/home/css/index.css">
 	<!-- Link Swiper's CSS -->
 	<link rel="stylesheet" href="/admin/lib/Swiper-3.4.2/dist/css/swiper.min.css">
+	<link rel="stylesheet" href="/admin/lib/ckeditor/plugins/codesnippet/lib/highlight/styles/tomorrow-night.css">
+	<link rel="stylesheet" href="https://i.icomoon.io/public/temp/9126f0d497/UntitledProject/style.css">
 {{/block}}
 
 {{block 'main'}}
@@ -11,207 +13,86 @@
 	{{include './common/header.art'}}
 	
 	<div class = "index-content clearfix">
-	<!-- 浮动tab -->
-	<div class = "float-tab">
-		<ul>
-		  <li>技术</li>
-		  <li>文学</li>
-		  <li>随笔</li>
-		  <li>. . .</li>
-		</ul>
-	</div>
-	<!-- 轮播区域 -->
-	<div class = "scroll">
-		<div class = "scroll-left">
-			<!-- Swiper -->
-			<div class="swiper-container">
-			    <div class="swiper-wrapper">
-			        <div class="swiper-slide">
-						<img src="images/article-1.jpg"  alt="" style="width: 100%; height: 100%;"/>
-					</div>
-			        <div class="swiper-slide">
-						<img src="images/article-2.jpg"  alt="" style="width: 100%; height: 100%;"/>
-					</div>
-			        <div class="swiper-slide">
-						<img src="images/article-3.jpg"  alt="" style="width: 100%; height: 100%;"/>
-					</div>
-			        <div class="swiper-slide">
-						<img src="images/article-4.jpg"  alt="" style="width: 100%; height: 100%;"/>
-					</div>
-			        <div class="swiper-slide">
-						<img src="images/article-5.jpg"  alt="" style="width: 100%; height: 100%;"/>
-					</div>
-					<div class="swiper-slide">
-						<img src="images/article-6.jpg"  alt="" style="width: 100%; height: 100%;"/>
-					</div>
-					<div class="swiper-slide">
-						<img src="images/article-7.jpg"  alt="" style="width: 100%; height: 100%;"/>
-					</div>
-					<div class="swiper-slide">
-						<img src="images/article-8.jpg"  alt="" style="width: 100%; height: 100%;"/>
-					</div>
-			    </div>
-			    <!-- Add Pagination -->
-			    <div class="swiper-pagination"></div>
-				<!-- Add Arrows -->
-				<div class="swiper-button-next"></div>
-				<div class="swiper-button-prev"></div>
-			</div>
+		<!-- 文章框架开始 -->
+		<div class="article-small">
+		 	<ul class = "article-small-ul">
+				{{each articles}}
+					<li class = "article-small-li">
+						<div class="container">
+							<div class="article-header">
+								<a class="article-title" href="/home/article?id={{$value._id.toString()}}">{{$value.title}}</a>
+								<div class="article-info">
+									<span class="author">{{$value.authorname}}</span>
+									<span>{{$value.publishDate}}</span>
+								</div>
+							</div>
+							<div class="article-content">
+								{{@$value.content}}
+							</div>
+							<div class = "more-div"></div>
+							<div class = "more-text";>
+								<a href="/home/article?id={{$value._id.toString()}}">[More]
+								</a>
+							</div>
+						</div>
+					</li>
+				{{/each}}
+			</ul>
 		</div>
+		<!-- 文章框架结束 -->
 		
-		<div class = "scroll-right">
-			<div class="right-top">
-				<img src="images/article-8.jpg" class="item-img" style="width: 100%; height: 100%; border-radius: 5px;">
-			</div>
-			<div class="right-bottom">
-				<img src="images/right-bottom.png" class="item-img" style="width: 100%; height: 100%; border-radius: 5px;">
-			</div>
-		</div>
-	</div>
-	
-	<ul class="list">
-		{{each articles.records}}
-		<li class="list-item">
-		<div class = "elementWraper">
-			<div class = "element-img">
-				<a href="/home/article?id={{@$value._id}}" class="thumbnail">
-					<img src="{{$value.cover}}">
-				</a>
-			</div>
-			<div class="article-content">
-				<a class="article-title" href="/home/article?id={{@$value._id}}">{{$value.title}}</a>
-				<div class="article-info">
-					<span class="author">{{$value.author}}</span>
-					<span>2020-09-10</span>
-				</div>
-				<div class="brief">
-					{{@$value.content.replace(/<[^>]+>/g, '').substr(0,50) + '...'}}
-				</div>
-			</div>
-		</div>
-			
-		</li>
-		{{/each}}
-	</ul>
-	<!-- 文章列表结束 -->
-	
-	<!-- 右侧卡片 -->
-		<div class = "kard-day">
-			<span style="color:rgba(0,0,0,0.65);font-size:14px;font-weight:bold;margin-bottom:14px;display:block">每日一句</span>
-			<img src="images/day.jpg" class="item-img" style="width: 100%; height: auto; margin-bottom: 14px;">
-			<span>身在井隅，心向璀璨。</span>
-		</div>
-		<div class = "kard-rank">
-			<span style="color:rgba(0,0,0,0.65);font-weight:bold;font-size:14px">优秀博主</span>
-			<!-- Swiper -->
-			<div class="swiper-container">
-			    <div class="swiper-wrapper">
-			        <div class="swiper-slide">
-						<img src="images/article-1.jpg"  alt="" style="width: 100%; height: 45%; border-radius:50%"/>
-						<ul class = "personal-info">
-							<li>未知</li>
-							<li>未知</li>
-							<li>帅气</li>
-						</ul>
-					</div>
-			        <div class="swiper-slide">
-						<img src="images/article-2.jpg"  alt="" style="width: 100%; height: 45%; border-radius:50%"/>
-						<ul class = "personal-info">
-							<li>未知</li>
-							<li>未知</li>
-							<li>帅气</li>
-					</div>
-			        <div class="swiper-slide">
-						<img src="images/article-3.jpg"  alt="" style="width: 100%; height: 45%; border-radius:50%"/>
-						<ul class = "personal-info">
-							<li>未知</li>
-							<li>未知</li>
-							<li>帅气</li>
-					</div>
-			        <div class="swiper-slide">
-						<img src="images/article-4.jpg"  alt="" style="width: 100%; height: 45%;  border-radius:50%"/>
-						<ul class = "personal-info">
-							<li>未知</li>
-							<li>未知</li>
-							<li>帅气</li>
-					</div>
-			        <div class="swiper-slide">
-						<img src="images/article-5.jpg"  alt="" style="width: 100%; height: 45%; border-radius:50%"/>
-						<ul class = "personal-info">
-							<li>未知</li>
-							<li>未知</li>
-							<li>帅气</li>
-					</div>
-					<div class="swiper-slide">
-						<img src="images/article-6.jpg"  alt="" style="width: 100%; height: 45%; border-radius:50%"/>
-						<ul class = "personal-info">
-							<li>未知</li>
-							<li>未知</li>
-							<li>帅气</li>
-					</div>
-					<div class="swiper-slide">
-						<img src="images/article-7.jpg"  alt="" style="width: 100%; height: 45%; border-radius:50%"/>
-						<ul class = "personal-info">
-							<li>未知</li>
-							<li>未知</li>
-							<li>帅气</li>
-					</div>
-					<div class="swiper-slide">
-						<img src="images/article-8.jpg"  alt="" style="width: 100%; height: 45%; border-radius:50%"/>
-						<ul class = "personal-info">
-							<li>未知</li>
-							<li>未知</li>
-							<li>帅气</li>
-					</div>
-			    </div>
-			</div>
-		</div>
-	<!-- 右侧卡片结束 -->
+		<!-- 右侧 -->
+		<form action="#" class="form-search">
+				<input name="q" type="text" placeholder="搜索...">
+				<button type="submit" class="button-search">搜索</button>
+		</form>
+		<div class = "type-list">
+			<h4>分类</h4>
+			<div class = "widget-content">
+				<ul>
+					<li>
+						<a>
+							<span class="icon-hammer"></span>
+							C/C++
+						</a>
 
+					</li>
+					<li>
+						<a>
+							<span class="icon-hammer"></span>
+							Qt
+						</a>
+					</li>
+					<li>
+						<a>
+							<span class="icon-hammer"></span>
+							HTML/CSS/JS
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class = "author-list">
+			<h4>作者</h4>
+			<div class = "widget-content">
+				<ul>
+					{{each users}}
+					<li>
+						<a>
+							<span class="icon-user"></span>
+							{{$value.username}}
+						</a>
+					</li>
+					{{/each}}
+				</ul>
+			</div>
+		</div>
+		<!-- 右侧结束 -->
 	</div>
-	<!-- 分页开始 -->
-	<div class="page w1100">
-		{{if articles.page > 1}}
-			<a href="/home/?page={{articles.page - 1}}">
-			上一页
-			</a>
-		{{/if}}
-		<% for(var i = 0; i < articles.display.length; i++) { %>
-			<a href="/home/?page={{articles.display[i]}}">{{articles.display[i]}}</a>
-		<% } %>
-		{{if articles.page < articles.pages}}
-			<a href="/home/?page={{articles.page - 0 + 1}}">
-			</a>
-		{{/if}}
-	</div>
-	<!-- 分页结束 -->
-	
-	<!-- Swiper JS -->
-	<script src="/admin/lib/Swiper-3.4.2/dist/js/swiper.min.js"></script>
-	
-	<!-- Initialize Swiper -->
-	<script>
-	var swiper = new Swiper('.scroll-left > .swiper-container', {
-	    pagination: '.swiper-pagination',
-		nextButton: '.swiper-button-next',
-		prevButton: '.swiper-button-prev',
-	    paginationClickable: true,
-	    spaceBetween: 30,
-		loop:true,
-	    centeredSlides: true,
-	    autoplay: 6000,	
-	    autoplayDisableOnInteraction: false
-	});
-	var swiper = new Swiper('.kard-rank > .swiper-container', {
-	    paginationClickable: true,
-		direction: 'vertical',
-	    spaceBetween: 30,
-		loop:true,
-	    centeredSlides: true,
-	    autoplay: 6000,	
-	    autoplayDisableOnInteraction: false
-	});
-	</script>
-	
 
+{{/block}}
+
+{{block 'script'}}
+	<script src="/admin/lib/ckeditor/plugins/codesnippet/lib/highlight/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
 {{/block}}

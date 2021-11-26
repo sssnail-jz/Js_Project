@@ -15,7 +15,7 @@ module.exports = function(req, res){
 		// 将文章信息写入数据库
 		await Article.create({
 			title: fields.title,
-			author: fields.author,
+			author: req.app.locals.userInfo._id,
 			publishDate: fields.publishDate,
 			cover: files.cover.filepath.split('public')[1],
 			content: fields.content

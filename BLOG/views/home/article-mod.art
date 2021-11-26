@@ -31,7 +31,7 @@
 					<div class="form-group">
 						<span>作者：</span>
 						<!-- 当前登录用户的ID进行关联 -->
-						<input type="text" name="author" value="{{article.author.toString()}}" class="form-control" readonly>
+						<input type="text" name="author" value="{{article.authorname}}" class="form-control" readonly>
 					</div>
 					<div class="form-group">
 						<span>发表时间：</span>

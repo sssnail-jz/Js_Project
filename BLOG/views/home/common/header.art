@@ -3,7 +3,7 @@
 		<div class="header-content">
 			<!-- 网站logo开始 -->
 			<h1 class="logo logo-left">
-				<a href="/home/"><img src="images/logo.png" alt="哲"></a>
+				<!-- <a href="/home/"><img src="images/logo.png" alt="哲"></a> -->
 			</h1>
 			<!-- 网站logo结束 -->
 			<!-- 网站导航开始 -->
@@ -49,7 +49,7 @@
 			<!-- 网站导航结束 -->
 		</div>
 	</div>
-	{{if (articleNew == null) && (userinfoshow == null)}}
+	{{if userinfoshow == null}}
 		<div style = "padding:0; margin:0;">
 			<img src = "images/background.png" style = "width: 100%;">
 		</div>

@@ -39,6 +39,21 @@
 	padding: 8px 0;
 }
 
+/* 让文章内部的 ul 显示和 ckeditor 里一致 */
+.article-content ul{
+	
+	list-style: disc;
+	display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+	margin-right: 0px;
+    padding: 0 40px;
+}
+
 /* 文章结束 */
 
 /* 侧边栏框架开始 */

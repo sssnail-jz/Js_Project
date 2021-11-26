@@ -12,6 +12,9 @@ home.get('/article-new', require('./home/article-new'));
 // 修改文章 get 路由
 home.get('/article-mod', require('./home/article-mod'));
 
+// 删除文章 get 路由
+home.get('/article-del', require('./home/article-del'));
+
 // 文章数据提交路由
 home.post('/article-submit', require('./home/article-submit'));
 

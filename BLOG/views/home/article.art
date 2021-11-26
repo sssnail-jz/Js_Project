@@ -14,7 +14,7 @@
 				<div class="article-header">
 					<h3 class="article-title">{{article.title}}</h3>
 					<div class="article-info">
-						<span class="author">{{article.author}}</span>
+						<span class="author">{{article.authorname}}</span>
 						<span>{{article.publishDate}}</span>
 					</div>
 				</div>

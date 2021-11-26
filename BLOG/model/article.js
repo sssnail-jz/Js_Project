@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 var articleSchema = new mongoose.Schema({
 	title: {
 		type: String,
-		maxlength: 20,
+		maxlength: 60,
 		minlength: 1,
 		required: [true, '请填写文章标题']
 	},

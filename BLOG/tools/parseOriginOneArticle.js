@@ -1,0 +1,19 @@
+const moment = require('moment');
+
+function parseOriginOneArticle(a){
+	return {
+		_id: a._id,
+		title: a.title,
+		authorname: a.author.username,
+		publishDate: parseDate(a.publishDate),
+		content: a.content
+	};
+}
+
+function parseDate(originDate){
+	const date = new Date(originDate);
+	var timeNum = Date.parse(date);
+	return moment(timeNum).format('YYYY-MM-DD');
+}
+
+module.exports = parseOriginOneArticle
