@@ -6,7 +6,7 @@ const commentSchema = new mongoose.Schema({
 	},
 	uid: {
 		type: mongoose.Schema.Types.ObjectId,
-		red: 'User'
+		ref: 'User'
 	},
 	time: {
 		type:Date

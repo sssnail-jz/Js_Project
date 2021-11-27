@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>哲-登录</title>
+	<title>登录</title>
 	<link rel="stylesheet" type="text/css" href="/admin/lib/loginplugin/css/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="/admin/lib/loginplugin/css/default.css">
 	<link rel="stylesheet" type="text/css" href="/admin/lib/loginplugin/css/styles.css">
@@ -12,7 +12,7 @@
 <body>
 	<div class="htmleaf-container">
 		<header class="htmleaf-header">
-			<h1>欢迎与‘哲’一起成长</h1>
+			<h1>Welcome</h1>
 			<div class="htmleaf-links">
 				<a class="htmleaf-icon icon-htmleaf-home-outline" href="/home/" title="不登录回到主页" target="_blank"></a>
 				<a class="htmleaf-icon icon-htmleaf-arrow-forward-outline" href="#" title="联系作者" target="_blank"></a>
@@ -20,7 +20,7 @@
 		</header>
 		<div class="wrapper">
 			<div class="container">
-				<h1>Welcome</h1>
+				<h1>Login</h1>
 				
 				<form action="/admin/login" method = "post" class="form">
 					<input type="text" name = "email" placeholder="Email">

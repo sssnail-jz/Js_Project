@@ -1,11 +1,8 @@
 {{extend './common/layout.art'}}
 
 {{block 'css'}}
-	<link rel="stylesheet" href="/home/css/index.css">
-    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,200,500,600,700' rel='stylesheet' type='text/css'>
-    <link href="http://cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/admin/lib/userinfocard/css/default.css">
-    <link rel="stylesheet" href="/admin/lib/userinfocard/dist/material-cards.css">
+	<link rel="stylesheet" href="/admin/lib/ckeditor/plugins/codesnippet/lib/highlight/styles/tomorrow-night.css">
+	<link rel="stylesheet" href="https://i.icomoon.io/public/temp/9126f0d497/UntitledProject/style.css">
 	<link rel="stylesheet" href="/home/css/userinfo.css">
 {{/block}}
 
@@ -14,107 +11,110 @@
 	{{include './common/header.art'}}
 	
 	<div class = "index-userinfo">
-		
-		<!-- 左面的个人信息展示 -->
-		<div class = "userinfo-contatiner">
-			<div class="col-md-4 col-sm-6 col-xs-12">
-				<article class="material-card Red">
-					<h2>
-						<span>{{userInfo.username}}</span>
-						<strong>
-							<i class="fa fa-fw fa-star"></i>
-							{{userInfo.email}}
-						</strong>
-					</h2>
-					<div class="mc-content">
-						<div class="img-container">
-							<img class="img-responsive" 
-							src="/admin/lib/userinfocard/img/thumb-jeff-bridges.jpg">
-						</div>
-						<div class="mc-description">
-							详细介绍 ...
-						</div>
-					</div>
-					<a class="mc-btn-action">
-						<i class="fa fa-bars"></i>
-					</a>
-					<div class="mc-footer">
-						<h4>
-							Social
-						</h4>
-						<a class="fa fa-fw fa-facebook"></a>
-						<a class="fa fa-fw fa-twitter"></a>
-						<a class="fa fa-fw fa-linkedin"></a>
-						<a class="fa fa-fw fa-google-plus"></a>
-					</div>
-				</article>
-			</div>
-		</div>
-
-		<!-- 右面关于此人的文章 -->
-		<div class = "userinfo-list-container">
-			<ul class="list">
+		<!-- 文章框架开始 -->
+		<div class="article-small">
+		 	<ul class = "article-small-ul">
 				{{each articles}}
-					<li class="list-item">
-						<div class = "elementWraper">
-							<div class = "element-img">
-							<a href="/home/article?id={{@$value._id}}" class="thumbnail">
-								<img src="{{$value.cover}}">
-							</a>
-						</div>
-						<div class="article-content">
-							<a class="article-title" href="/home/article?id={{@$value._id}}">{{$value.title}}</a>
-							<div class="article-info">
-								<!-- <span class="author">{{$value.author}}</span> -->
-								<span>{{$value.publishDate}}</span>
+					<li class = "article-small-li">
+						<div class="container">
+							<div class="article-header">
+								<a class="article-title" href="/home/article?id={{$value._id.toString()}}">{{$value.title}}</a>
+								<div class="article-info">
+									<span>{{$value.publishDate}}</span>
+									<a class = "article-del" href = "/home/article-del?id={{@$value._id}}">删除</a>
+									<a class = "article-mod" href = "/home/article-mod?id={{@$value._id}}">修改</a>
+								</div>
 							</div>
-							<div class="brief">
-								{{@$value.content.replace(/<[^>]+>/g, '').substr(0,80) + '...'}}
+							<div class="article-content">
+								<span>{{@$value.content}}</span>
 							</div>
-							<div class = "article-oper">
-								<a class = "article-mod" href = "/home/article-mod?id={{@$value._id}}">修改</a>
-								<a class = "article-del" href = "/home/article-del?id={{@$value._id}}">删除</a>
+							<div class = "more-div"></div>
+							<div class = "more-text";>
+								<a href="/home/article?id={{$value._id.toString()}}">[More]
+								</a>
 							</div>
 						</div>
 					</li>
 				{{/each}}
 			</ul>
 		</div>
+		<!-- 文章框架结束 -->
+		
+		<!-- 右侧信息栏 -->
+		<div class = "article-right-userinfo">
+			<img class="blog-logo" src="images/quanyecha.jpg" alt="">
+			<div class="blog-author">
+				<a href="/luoyh/">{{userInfo.username}}</a>
+			</div>
+			<div class = "blog-msg">
+				<span>
+					一位著名的围棋九段高手——吴清源
+				</span>
+			</div>
+			<ul class="social-network">
+				<li style="display: inline-block;">
+					<a href="#" title="主页">
+						<i class="icon-home"></i>
+					</a>
+				</li>
+				<li style="display: inline-block;">
+					<a target="_blank" href="#" title="用户信息">
+						<i class="icon-info"></i>
+					</a>
+				</li>
+				<li id="addQQ" style="display: inline-block;">
+					<a href="#" title="添加 QQ 好友">
+						<i class="icon-qq"></i>
+					</a>
+				</li>
+				<li id="addFriend" style="display: inline-block;">
+					<a target="_blank" href="#" title="添加好友">
+						<i class="icon-plus"></i>
+					</a>
+				</li>
+				<li id="sendMsg" style="display: inline-block;">
+					<a href="#" target="_blank" title="发送消息">
+						<i class="icon-envelop"></i>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<form action="#" class="form-search">
+			<input name="q" type="text" placeholder="搜索...">
+			<button type="submit" class="button-search">搜索</button>
+		</form>
+		<div class = "type-list">
+		<h4>分类</h4>
+			<div class = "widget-content">
+				<ul>
+					<li>
+						<a>
+							<span class="icon-hammer"></span>
+							C/C++
+						</a>
+
+					</li>
+					<li>
+						<a>
+							<span class="icon-hammer"></span>
+							Qt
+						</a>
+					</li>
+					<li>
+						<a>
+							<span class="icon-hammer"></span>
+							HTML/CSS/JS
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
 	</div>
 	
 {{/block}}
 
 {{block 'script'}}
-<script src="/admin/lib/userinfocard/js/jquery-2.1.1.min.js"></script>
-    <script>
-        $(function() {
-            $('.material-card > .mc-btn-action').click(function() {
-                var card = $(this).parent('.material-card');
-                var icon = $(this).children('i');
-                icon.addClass('fa-spin-fast');
-
-                if (card.hasClass('mc-active')) {
-                    card.removeClass('mc-active');
-
-                    window.setTimeout(function() {
-                        icon
-                            .removeClass('fa-arrow-left')
-                            .removeClass('fa-spin-fast')
-                            .addClass('fa-bars');
-
-                    }, 800);
-                } else {
-                    card.addClass('mc-active');
-
-                    window.setTimeout(function() {
-                        icon
-                            .removeClass('fa-bars')
-                            .removeClass('fa-spin-fast')
-                            .addClass('fa-arrow-left');
-
-                    }, 800);
-                }
-            });
-        });
-    </script>
+	<script src="/admin/lib/userinfocard/js/jquery-2.1.1.min.js"></script>
+	<script src="/admin/lib/ckeditor/plugins/codesnippet/lib/highlight/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
 {{/block}}

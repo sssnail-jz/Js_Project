@@ -3,14 +3,17 @@
 {{block 'css'}}
 	<link rel="stylesheet" href="/home/css/article.css">
 	<link rel="stylesheet" href="/admin/lib/ckeditor/plugins/codesnippet/lib/highlight/styles/tomorrow-night.css">
+	<link rel="stylesheet" href="https://i.icomoon.io/public/temp/9126f0d497/UntitledProject/style.css">
+	<script>
+		window.location ="#to-footer";
+	
+	</script>
 {{/block}}
 
 {{block 'main'}}
 	{{include './common/header.art'}}
-	<!-- 文章框架开始 -->
-	<div class="article">
-		<div class="w1100">
-			<div class="container">
+		<div class="index-article">
+			<div class = "article-left-main">
 				<div class="article-header">
 					<h3 class="article-title">{{article.title}}</h3>
 					<div class="article-info">
@@ -26,7 +29,6 @@
 					<h4>评论</h4>
 					<form class="comment-form" action = "/home/comment" method = "post">
 						<textarea class="comment" name = "content"></textarea>
-						<input type = "hidden" name = "uid" value = {{userInfo._id.toString()}}>
 						<input type = "hidden" name = "aid" value = {{article._id.toString()}}>
 						<div class="items">
 							<input type="submit" value="提交">
@@ -35,14 +37,21 @@
 					{{else}}
 						<div><h2>登录后可对文章进行评论！</h2></div>
 					{{/if}}
-					<div class="comment-list">
-					
+
+					<!-- 是否定位到最底部（新增评论的时候） -->
+					{{if newcommentflags}}
+						<div class="comment-list" id = "to-footer">
+					{{else}}
+						<div class="comment-list"">
+					{{/if}}
+
+					<!-- 评论列表 -->
 					{{each comments}}
 						<div class="mb10">
 							<div class="article-info">
-								<span class="author">{{$value.uid}}</span>
+								<span class="author">{{$value.authorname}}</span>
 								<span>{{$value.time}}</span>
-								<span>用户邮箱</span>
+								<span>{{$value.authoremail}}</span>
 							</div>
 							<div class="comment-content">
 								
@@ -50,13 +59,81 @@
 							</div>
 						</div>
 					{{/each}}
-	
+
 					</div>
 				</div>
 			</div>
+
+			<!-- 右侧信息栏 -->
+			<div class = "article-right-userinfo">
+				<img class="blog-logo" src="images/quanyecha.jpg" alt="">
+				<div class="blog-author">
+					<a href="/luoyh/">{{article.authorname}}</a>
+				</div>
+				<div class = "blog-msg">
+					<span>
+						一位著名的围棋九段高手——吴清源
+					</span>
+				</div>
+				<ul class="social-network">
+					<li style="display: inline-block;">
+						<a href="#" title="主页">
+							<i class="icon-home"></i>
+						</a>
+					</li>
+					<li style="display: inline-block;">
+						<a target="_blank" href="#" title="用户信息">
+							<i class="icon-info"></i>
+						</a>
+					</li>
+					<li id="addQQ" style="display: inline-block;">
+						<a href="#" title="添加 QQ 好友">
+							<i class="icon-qq"></i>
+						</a>
+					</li>
+					<li id="addFriend" style="display: inline-block;">
+						<a target="_blank" href="#" title="添加好友">
+							<i class="icon-plus"></i>
+						</a>
+					</li>
+					<li id="sendMsg" style="display: inline-block;">
+						<a href="#" target="_blank" title="发送消息">
+							<i class="icon-envelop"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<form action="#" class="form-search">
+				<input name="q" type="text" placeholder="搜索...">
+				<button type="submit" class="button-search">搜索</button>
+			</form>
+			<div class = "type-list">
+			<h4>分类</h4>
+				<div class = "widget-content">
+					<ul>
+						<li>
+							<a>
+								<span class="icon-hammer"></span>
+								C/C++
+							</a>
+
+						</li>
+						<li>
+							<a>
+								<span class="icon-hammer"></span>
+								Qt
+							</a>
+						</li>
+						<li>
+							<a>
+								<span class="icon-hammer"></span>
+								HTML/CSS/JS
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
 		</div>
-	</div>
-	<!-- 文章框架结束 -->
 {{/block}}
 
 {{block 'script'}}

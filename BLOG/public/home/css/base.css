@@ -156,7 +156,6 @@ textarea {
 
 .article-info span:not(:last-child):after {
 	content: '';
-	width: 1px;
 	height: 10px;
 	position: absolute;
 	right: 0;
