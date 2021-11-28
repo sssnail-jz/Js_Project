@@ -8,8 +8,8 @@ app.use(bodyParser.json());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/first', function(req, res){
-	res.send('hello ajax');
+app.get('/verifyEmailAddress', function(req, res){
+	res.send('get email..');
 });
 
 app.post('/jsontest',function(req, res){

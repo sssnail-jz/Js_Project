@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src = "js/ajax.js"></script>
+	<title>Document</title>
+</head>
+<body>
+	<span> 请输入邮箱地址</span>
+	<input type = "email" id = "email" placeholder="email">
+	<p id = "info">提示</p>
+	<script>
+		var emailId = document.getElementById('email');
+		var infoId =document.getElementById('info');
+
+		emailId.onblur = function(){
+			var email = this.value;
+			var reg = /^\w+([-_.]\w+)*@(\w+[-.])+\w{2,4}$/;
+			if(!reg.test(email)){
+				infoId.innerHTML = '请输入符合规则的邮箱地址';
+				return;
+			}
+
+			ajax({
+				type: 'get',
+				url: 'http://localhost:3000/verifyEmailAddress',
+				data: {
+					email: email
+				},
+				header: {
+					'Content-Type': 'application/x-www-form-urlencoded'
+				},
+				success: function(result){
+					console.log('success : '); 
+					console.log(result.responseText);
+				},
+				error: function(result){
+					console.log('error : '); 
+					console.log(result.responseText);
+				}
+			});
+		}
+		
+	</script>
+</body>
+</html>

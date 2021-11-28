@@ -17,18 +17,9 @@ module.exports = function(req, res){
 		await Article.updateOne({_id: mongoose.Types.ObjectId(id)},{
 			title: fields.title,
 			publishDate: fields.publishDate,
-			cover: files.cover.filepath.split('public')[1],
-			content: fields.content
+			content: fields.content,
+			label: fields.label
 		});
-
-		// 将文章信息写入数据库
-		// await Article.create({
-		// 	title: fields.title,
-		// 	author: fields.author,
-		// 	publishDate: fields.publishDate,
-		// 	cover: files.cover.filepath.split('public')[1],
-		// 	content: fields.content
-		// });
 		res.redirect('/admin/article');
 	});
 }

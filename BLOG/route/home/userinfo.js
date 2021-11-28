@@ -7,10 +7,18 @@ module.exports = async function(req, res) {
 
 	const id = req.query.id;
 	
-	// 这里 将 id 转换为 ObjectId 在进行比较 
-	var articles = await Article.find({author: mongoose.Types.ObjectId(id)}).populate('author');	
-
-	console.log(articles);
+	var label = req.query.label;
+	var articles = null;
+	if(label == null){
+		articles = await Article.find({
+			author: mongoose.Types.ObjectId(id)}).populate('author');
+	}else{
+		articles = await Article.find({
+			label: label,
+			// 这里 将 id 转换为 ObjectId 在进行比较 
+			author: mongoose.Types.ObjectId(id)}).populate('author');
+	}
+	
     res.render('home/userinfo', {
 		userinfoshow: true,
 		// 传递用户信息到用户信息模板

@@ -1,24 +1,25 @@
 {{extend './common/layout.art'}}
 
 {{block 'css'}}
+	<link rel="stylesheet" href="/home/css/base.css">
 	<link rel="stylesheet" href="/home/css/article.css">
 	<link rel="stylesheet" href="/admin/lib/ckeditor/plugins/codesnippet/lib/highlight/styles/tomorrow-night.css">
-	<link rel="stylesheet" href="https://i.icomoon.io/public/temp/9126f0d497/UntitledProject/style.css">
+	<link rel="stylesheet" href="/admin/lib/icomoon/style.css">
 	<script>
 		window.location ="#to-footer";
-	
 	</script>
 {{/block}}
 
 {{block 'main'}}
 	{{include './common/header.art'}}
-		<div class="index-article">
+		<div class="index-article clearfix">
 			<div class = "article-left-main">
 				<div class="article-header">
 					<h3 class="article-title">{{article.title}}</h3>
 					<div class="article-info">
 						<span class="author">{{article.authorname}}</span>
 						<span>{{article.publishDate}}</span>
+						<span class = "label">{{article.label}}</span>
 					</div>
 				</div>
 				<div class="article-content">
@@ -55,7 +56,7 @@
 							</div>
 							<div class="comment-content">
 								
-								{{$value.content}}
+								{{@$value.content}}
 							</div>
 						</div>
 					{{/each}}
@@ -107,32 +108,7 @@
 				<input name="q" type="text" placeholder="搜索...">
 				<button type="submit" class="button-search">搜索</button>
 			</form>
-			<div class = "type-list">
-			<h4>分类</h4>
-				<div class = "widget-content">
-					<ul>
-						<li>
-							<a>
-								<span class="icon-hammer"></span>
-								C/C++
-							</a>
-
-						</li>
-						<li>
-							<a>
-								<span class="icon-hammer"></span>
-								Qt
-							</a>
-						</li>
-						<li>
-							<a>
-								<span class="icon-hammer"></span>
-								HTML/CSS/JS
-							</a>
-						</li>
-					</ul>
-				</div>
-			</div>
+			{{include './common/label.art'}}
 		</div>
 {{/block}}
 

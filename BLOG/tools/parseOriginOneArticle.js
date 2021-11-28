@@ -6,7 +6,8 @@ function parseOriginOneArticle(a){
 		title: a.title,
 		authorname: a.author.username,
 		publishDate: parseDate(a.publishDate),
-		content: a.content
+		content: a.content,
+		label: a.label
 	};
 }
 

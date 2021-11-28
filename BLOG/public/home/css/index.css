@@ -1,5 +1,3 @@
-/* 文章列表开始 */
-
 .clearfix::before,
 .clearfix::after{
 	content: '';

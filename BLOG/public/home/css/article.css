@@ -1,3 +1,10 @@
+.clearfix::before,
+.clearfix::after{
+	content: '';
+	display: table;
+	clear: both;
+}
+
 .index-article{
 	margin: 0px, 0px;
 	margin-top: 10px;

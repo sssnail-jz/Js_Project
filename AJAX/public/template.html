@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="./js/template-web.js"> </script>
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/html" id = "tp1">
+		<h1> {{username}} {{age}}</h1>
+	</script>
+	<script type="text/javascript">
+
+		var html = template('tp1', {uasername: 'jack', age: 30});
+		console.log(html);
+	</script>
+</body>
+</html>
+

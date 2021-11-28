@@ -11,7 +11,8 @@ function parseOriginArticleArr(articleArr){
 			title: one.title,
 			authorname: one.author.username,
 			publishDate: parseDate(one.publishDate),
-			content: one.content
+			content: one.content,
+			label: one.label
 		});
 	}
 	return articles;

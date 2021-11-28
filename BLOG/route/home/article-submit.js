@@ -7,18 +7,16 @@ module.exports = function(req, res){
 	form.uploadDir = path.join(__dirname, '../', '../', 'public', 'uploads');
 	form.keepExtensions = true;
 	
-	
-	
 	form.parse(req, async function(err, fields, files){
 		console.log(fields);
-		
+
 		// 将文章信息写入数据库
 		await Article.create({
 			title: fields.title,
 			author: req.app.locals.userInfo._id,
 			publishDate: fields.publishDate,
-			cover: files.cover.filepath.split('public')[1],
-			content: fields.content
+			content: fields.content,
+			label: fields.label
 		});
 		res.redirect('/admin/article');
 	});

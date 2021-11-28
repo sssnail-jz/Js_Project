@@ -2,10 +2,8 @@
 
 {{block 'css'}}
 	<link rel="stylesheet" href="/home/css/index.css">
-	<!-- Link Swiper's CSS -->
-	<link rel="stylesheet" href="/admin/lib/Swiper-3.4.2/dist/css/swiper.min.css">
 	<link rel="stylesheet" href="/admin/lib/ckeditor/plugins/codesnippet/lib/highlight/styles/tomorrow-night.css">
-	<link rel="stylesheet" href="https://i.icomoon.io/public/temp/9126f0d497/UntitledProject/style.css">
+	<link rel="stylesheet" href="/admin/lib/icomoon/style.css">
 {{/block}}
 
 {{block 'main'}}
@@ -24,6 +22,7 @@
 								<div class="article-info">
 									<span class="author">{{$value.authorname}}</span>
 									<span>{{$value.publishDate}}</span>
+									<span class = "label">{{$value.label}}</span>
 								</div>
 							</div>
 							<div class="article-content">
@@ -46,32 +45,9 @@
 				<input name="q" type="text" placeholder="搜索...">
 				<button type="submit" class="button-search">搜索</button>
 		</form>
-		<div class = "type-list">
-			<h4>分类</h4>
-			<div class = "widget-content">
-				<ul>
-					<li>
-						<a>
-							<span class="icon-hammer"></span>
-							C/C++
-						</a>
+		
+		{{include './common/label.art'}}
 
-					</li>
-					<li>
-						<a>
-							<span class="icon-hammer"></span>
-							Qt
-						</a>
-					</li>
-					<li>
-						<a>
-							<span class="icon-hammer"></span>
-							HTML/CSS/JS
-						</a>
-					</li>
-				</ul>
-			</div>
-		</div>
 		<div class = "author-list">
 			<h4>作者</h4>
 			<div class = "widget-content">

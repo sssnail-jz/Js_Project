@@ -16,12 +16,12 @@ var articleSchema = new mongoose.Schema({
 		type: Date,
 		default: Date.now
 	},
-	cover: {
-		type: String,
-		default: null
-	},
 	content: {
 		type: String
+	},
+	label:{
+		type: String,
+		required: [true, '请填写文章标签']
 	}
 });
 

@@ -67,7 +67,7 @@ textarea {
 }
 
 /* 头部框架开始 */
-.header {
+.index-header {
 	padding-left: 185px;
 	padding-right: 185px;
 	height: 60px;
@@ -163,7 +163,8 @@ textarea {
 	background: #3f434c;
 }
 
-.article-info .author {
+.article-info .author,
+.article-info .label{
 	color: #ff7300;
 }
 
