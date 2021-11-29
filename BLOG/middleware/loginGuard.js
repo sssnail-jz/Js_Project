@@ -14,7 +14,14 @@ const guard = function(req,res,next){
 	// 	}
 	// 	next();
 	// }
-	next();
+	console.log('[ middleware url checkout: ]' + req.url);
+	// if(req.url.indexOf('getAccessToken') == -1 && !req.session.node_id){
+	// 	return res.redirect('/home/');
+	// }
+	// else{
+		next();
+	// }
+	
 }
 
 module.exports = guard;

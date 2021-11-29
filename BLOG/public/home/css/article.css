@@ -74,6 +74,15 @@
 	line-height: 50px;
 }
 
+.blog-msg a{
+	cursor: pointer;
+	color: blue;
+}
+
+.blog-msg a:hover{
+	color: black;
+}
+
 .form-search{
 	width: 290px;
 	height: 50px;
@@ -259,6 +268,15 @@
 
 .comment-list {
 	margin-top: 30px;
+}
+
+.comment-list a{
+	cursor: pointer;
+	color: #ff7300;
+}
+
+.comment-list a:hover{
+	color: black;
 }
 
 .comment-content {

@@ -9,7 +9,7 @@ var articleSchema = new mongoose.Schema({
 	},
 	author: {
 		type: mongoose.Schema.Types.ObjectId,
-		ref: 'User',
+		ref: 'GitUser',
 		required: [true, '请传递作者']
 	},
 	publishDate: {

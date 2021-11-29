@@ -17,7 +17,7 @@
 				<div class="article-header">
 					<h3 class="article-title">{{article.title}}</h3>
 					<div class="article-info">
-						<span class="author">{{article.authorname}}</span>
+						<span class="author">{{article.authorlogin}}</span>
 						<span>{{article.publishDate}}</span>
 						<span class = "label">{{article.label}}</span>
 					</div>
@@ -50,9 +50,9 @@
 					{{each comments}}
 						<div class="mb10">
 							<div class="article-info">
-								<span class="author">{{$value.authorname}}</span>
+								<span class="author">{{$value.authorlogin}}</span>
 								<span>{{$value.time}}</span>
-								<span>{{$value.authoremail}}</span>
+								<a href = "{{$value.authorhtml_url}}">{{$value.authorhtml_url}}</a>
 							</div>
 							<div class="comment-content">
 								
@@ -68,13 +68,13 @@
 			<!-- 右侧信息栏 -->
 			<div class = "right-container">
 				<div class = "article-right-userinfo">
-					<img class="blog-logo" src="images/quanyecha.jpg" alt="">
+					<img class="blog-logo" src="{{userinfoarticle.avatar_url}}" alt="">
 					<div class="blog-author">
-						<a href="/luoyh/">{{article.authorname}}</a>
+						<span style = "color: black">{{article.authorlogin}}</span>
 					</div>
 					<div class = "blog-msg">
 						<span>
-							一位著名的围棋九段高手——吴清源
+							<a href = "{{userinfoarticle.html_url}}">{{userinfoarticle.html_url}}</a>
 						</span>
 					</div>
 					<ul class="social-network">

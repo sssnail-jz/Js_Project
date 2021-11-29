@@ -4,7 +4,7 @@ function parseOriginOneArticle(a){
 	return {
 		_id: a._id,
 		title: a.title,
-		authorname: a.author.username,
+		authorlogin: a.author.login,
 		publishDate: parseDate(a.publishDate),
 		content: a.content,
 		label: a.label

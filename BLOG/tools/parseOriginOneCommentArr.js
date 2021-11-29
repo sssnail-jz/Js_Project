@@ -10,8 +10,8 @@ function parseOriginOneCommentArr(comments){
 		resultarr.push({
 			_id: one._id,
 			aid: one.aid._id,
-			authorname: one.uid.username,
-			authoremail: one.uid.email,
+			authorlogin: one.uid.login,
+			authorhtml_url: one.uid.html_url,
 			time: parseDate(one.time),
 			content: one.content
 		});

@@ -11,13 +11,13 @@ module.exports = function(req, res){
 		console.log(fields);
 
 		// 将文章信息写入数据库
-		await Article.create({
+		var article = await Article.create({
 			title: fields.title,
 			author: req.app.locals.userInfo._id,
 			publishDate: fields.publishDate,
 			content: fields.content,
 			label: fields.label
 		});
-		res.redirect('/admin/article');
+		res.redirect('/home/article?id=' + article._id);
 	});
 }

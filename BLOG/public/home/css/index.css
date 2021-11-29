@@ -194,6 +194,23 @@
 	overflow: hidden;
 }
 
+.author-list li{
+	position: relative;
+	height: 32px;
+}
+
+.author-avatar{
+	border-radius: 100%;
+}
+
+.author-name{
+	display: inline-block;
+	line-height: 32px;
+	margin-left: 10px;
+	position: absolute;
+	font-size: 14px;
+}
+
 .widget-content li{
 	margin: 8px 20px;
 	display: list-item;

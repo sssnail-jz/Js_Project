@@ -27,9 +27,9 @@
 				{{/if}}
 				<li id = "li-login">
 					{{if userInfo}}
-						<a href="/admin/login">信息</a>
+						<a href="/home/">信息</a>
 					{{else}}
-						<a href="/admin/login">登录</a>
+						<a href="https://github.com/login/oauth/authorize?client_id=b7acf6ece76078645f4f&redirect_uri=http://127.0.0.1:80/admin/getAccessToken">gitHub登录</a>
 					{{/if}}
 					<div id = "login-menu-wraper">
 						<ul>

@@ -20,6 +20,6 @@ module.exports = function(req, res){
 			content: fields.content,
 			label: fields.label
 		});
-		res.redirect('/admin/article');
+		res.redirect('/home/article?id=' + id);
 	});
 }

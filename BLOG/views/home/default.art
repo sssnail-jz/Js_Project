@@ -20,7 +20,7 @@
 							<div class="article-header">
 								<a class="article-title" href="/home/article?id={{$value._id.toString()}}">{{$value.title}}</a>
 								<div class="article-info">
-									<span class="author">{{$value.authorname}}</span>
+									<span class="author">{{$value.authorlogin}}</span>
 									<span>{{$value.publishDate}}</span>
 									<span class = "label">{{$value.label}}</span>
 								</div>
@@ -55,9 +55,11 @@
 					<ul>
 						{{each users}}
 						<li>
-							<a>
-								<span class="icon-user"></span>
-								{{$value.username}}
+							<a rel="nofollow" href="/home/userinfo?id={{$value._id.toString()}}">
+                    			<img width="32" height="32" class="author-avatar" alt="author avatar" src="{{$value.avatar_url}}">
+                			</a>
+							<a class="author-name" href="/home/userinfo?id={{$value._id.toString()}}">
+								{{$value.login}}（{{articleCount}}）
 							</a>
 						</li>
 						{{/each}}

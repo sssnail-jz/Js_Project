@@ -9,7 +9,7 @@
         <div class="main">
         	<!-- 分类标题 -->
             <div class="title">
-                <h4>用户 {{userInfo ? userInfo.username : '无效用户名'}}</h4>
+                <h4>用户 {{userInfo ? userInfo.login : '无效用户名'}}</h4>
                 <span>找到{{userCount}}个用户</span>
 				<!-- 新增用户 -->
                 <a href="/admin/user-edit" class="btn btn-primary new">新增用户</a>

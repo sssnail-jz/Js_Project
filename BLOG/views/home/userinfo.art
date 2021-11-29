@@ -23,8 +23,12 @@
 								<div class="article-info">
 									<span>{{$value.publishDate}}</span>
 									<span class = "label" style = "display:inline">{{$value.label}}</span>
-									<a class = "article-del" href = "/home/article-del?id={{@$value._id}}">删除</a>
-									<a class = "article-mod" href = "/home/article-mod?id={{@$value._id}}">修改</a>
+									{{if userInfo}}
+										{{if userInfo._id.toString() == userInfo_._id.toString()}}
+											<a class = "article-del" href = "/home/article-del?id={{@$value._id.toString()}}">删除</a>
+											<a class = "article-mod" href = "/home/article-mod?id={{@$value._id.toString()}}">修改</a>
+										{{/if}}
+									{{/if}}
 								</div>
 							</div>
 							<div class="article-content">
@@ -45,13 +49,13 @@
 		<!-- 右侧信息栏 -->
 		<div class = "right-container">
 			<div class = "article-right-userinfo">
-				<img class="blog-logo" src="images/quanyecha.jpg" alt="">
+				<img class="blog-logo" src="{{userInfo_.avatar_url}}" alt="">
 				<div class="blog-author">
-					<a href="/luoyh/">{{userInfo.username}}</a>
+					<span style = "color: black">{{userInfo_.login}}</span>
 				</div>
 				<div class = "blog-msg">
 					<span>
-						一位著名的围棋九段高手——吴清源
+						<a href = "{{userInfo_.html_url}}">{{userInfo_.html_url}}</a>
 					</span>
 				</div>
 				<ul class="social-network">
@@ -91,32 +95,32 @@
 					<div class = "widget-content">
 						<ul>
 							<li>
-								<a href = "/home/userinfo?id={{userInfo._id.toString()}}&label=C/C++">
+								<a href = "/home/userinfo?id={{userInfo_._id.toString()}}&label=C/C++">
 									<span class="icon-hammer"></span>
 									C/C++
 								</a>
 
 							</li>
 							<li>
-								<a href = "/home/userinfo?id={{userInfo._id.toString()}}&label=QT">
+								<a href = "/home/userinfo?id={{userInfo_._id.toString()}}&label=QT">
 									<span class="icon-hammer"></span>
 									QT
 								</a>
 							</li>
 							<li>
-								<a href = "/home/userinfo?id={{userInfo._id.toString()}}&label=HTML/CSS/JS">
+								<a href = "/home/userinfo?id={{userInfo_._id.toString()}}&label=HTML/CSS/JS">
 									<span class="icon-hammer"></span>
 									HTML/CSS/JS
 								</a>
 							</li>
 							<li>
-								<a href = "/home/userinfo?id={{userInfo._id.toString()}}&label=AJAX">
+								<a href = "/home/userinfo?id={{userInfo_._id.toString()}}&label=AJAX">
 									<span class="icon-hammer"></span>
 									AJAX
 								</a>
 							</li>
 							<li>
-								<a href = "/home/userinfo?id={{userInfo._id.toString()}}&label=NodeJS">
+								<a href = "/home/userinfo?id={{userInfo_._id.toString()}}&label=NodeJS">
 									<span class="icon-hammer"></span>
 									NodeJS
 								</a>

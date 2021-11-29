@@ -9,7 +9,7 @@ function parseOriginArticleArr(articleArr){
 		articles.push({
 			_id: one._id,
 			title: one.title,
-			authorname: one.author.username,
+			authorlogin: one.author.login,
 			publishDate: parseDate(one.publishDate),
 			content: one.content,
 			label: one.label

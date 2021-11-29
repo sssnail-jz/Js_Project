@@ -159,6 +159,15 @@
 	line-height: 50px;
 }
 
+.blog-msg a{
+	cursor: pointer;
+	color: blue;
+}
+
+.blog-msg a:hover{
+	color: black;
+}
+
 .form-search{
 	margin-top: 20px;
 	width: 290px;

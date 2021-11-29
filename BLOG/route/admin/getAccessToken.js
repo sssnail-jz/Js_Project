@@ -8,36 +8,37 @@ const loginconfig = {
 
 module.exports = async function(req, res){
 	const code = req.query.code;
-	console.log(code);
+	console.log('[ github code 获取成功: ] ' + code);
 	const params = {
 		client_id: loginconfig.client_id,
 		client_secret: loginconfig.client_secret,
 		code: code
 	}
 	let result = await request.post({
-			url: 'https://github.com/login/oauth/access_token', 
-			method: 'post',
-			json: true,
-			headers: {
-				"content-type": "application/json",
+		url: 'https://github.com/login/oauth/access_token', 
+		method: 'post',
+		json: true,
+		headers: {
+			"content-type": "application/json",
+		},
+		body: params
+	},function(error, response, body) {
+		if(body == undefined){
+			res.redirect('/home');
+		}
+		else{
+			console.log('[ github access_token 获取成功: ] ' + body.access_token);
+			request.get({
+				url: 'https://api.github.com/user?',
+				method: 'get',
+				headers: {
+					"Authorization": 'token '+ body.access_token,
+					'User-Agent': 'niyueling'
+				}
 			},
-			body: params
-		},function(error, response, body) {
-				if(body == undefined){
-					redirect('/admin/login');
-				}
-				else{
-					request.get({
-						url: 'https://api.github.com/user?',
-						method: 'get',
-						headers: {
-							"Authorization": 'token '+body.access_token,
-							'User-Agent': 'niyueling'
-						}
-					},
-					function(error, response, body){
-						res.redirect('/admin/gitlogin?gituserinfo=' + body);
-					});
-				}
+			function(error, response, body){
+				res.redirect('/admin/gitlogin?gituserinfo=' + body);
 			});
+		}
+	});
 };

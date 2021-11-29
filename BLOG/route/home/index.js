@@ -1,5 +1,5 @@
 const {Article} = require('../../model/article');
-const {User}= require('../../model/user');
+const {GitUser}= require('../../model/gituser');
 const parseOriginArticleArr = require('../../tools/parseOriginArticleArr');
 
 module.exports = async function(req, res){
@@ -11,11 +11,16 @@ module.exports = async function(req, res){
 	}else{
 		articles = await Article.find({label: label}).populate('author');
 	}
-	
-	var users = await User.find();
+	// 文章总数，用来显示
+	var articleCount = await Article.countDocuments();
+
+	// 查找到所有的用户
+	var users = await GitUser.find();
+
 	res.render('home/default', {
 		articles: parseOriginArticleArr(articles),
-		users: users
+		users: users,
+		articleCount: articleCount
 		});
 }
 
