@@ -485,4 +485,4 @@ CKEDITOR.config.codeSnippet_codeClass = 'hljs';
  * @cfg {String} [codeSnippet_theme='default']
  * @member CKEDITOR.config
  */
-CKEDITOR.config.codeSnippet_theme = 'monokai_sublime';
+CKEDITOR.config.codeSnippet_theme = 'github';

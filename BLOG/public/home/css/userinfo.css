@@ -108,14 +108,23 @@
 	text-decoration: underline;
 }
 
+.right-container{
+	padding: 0;
+	border: 0;
+	position: relative;
+}
+
 .article-right-userinfo{
 	width: 290px;
 	height: 300px;
-	float: right;
-	margin-top: 20px;
+	
+	position: absolute;
+	/* right: 0; */
+	left: 860px;
+	top: 20px;
+
 	padding: 0;
 	background: #FFF;
-	position: relative;
 }
 
 .blog-logo {
@@ -154,9 +163,12 @@
 	margin-top: 20px;
 	width: 290px;
 	height: 50px;
-	float: right;
+	
+	position: absolute;
+	left: 860px;
+	top: 320px;
+
 	padding: 0;
-	position: relative;
 }
 
 .form-search input{
@@ -197,8 +209,11 @@
 
 .type-list{
 	width: 290px;
-	float: right;
-	margin-top: 20px;
+	
+	position: absolute;
+	left: 860px;
+	top: 410px;
+
 	background-color: white;
 }
 

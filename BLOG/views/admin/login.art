@@ -26,6 +26,7 @@
 					<input type="text" name = "email" placeholder="Email">
 					<input type="password" name = "password" placeholder="Password">
 					<button type="submit" id="login-button">Login</button>
+					<a style = "display: block; margin-top:10px; color: red; font-weight: bold" href = "https://github.com/login/oauth/authorize?client_id=b7acf6ece76078645f4f&redirect_uri=http://127.0.0.1:80/admin/getAccessToken">GitHub登录</a>
 				</form>
 			</div>
 			

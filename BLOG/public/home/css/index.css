@@ -100,13 +100,21 @@
 	text-decoration: underline;
 }
 
+.right-container{
+	padding: 0;
+	border: 0;
+	position: relative;
+}
+
 .form-search{
-	margin-top: 20px;
 	width: 290px;
 	height: 50px;
-	float: right;
+
+	position: absolute;
+	right: 0;
+	top: 20px;
+
 	padding: 0;
-	position: relative;
 }
 
 .form-search input{
@@ -148,8 +156,11 @@
 /* 右侧 */
 .type-list{
 	width: 290px;
-	float: right;
-	margin-top: 20px;
+	
+	position: absolute;
+	right: 0;
+	top: 90px;
+
 	background-color: white;
 }
 
@@ -173,9 +184,12 @@
 
 .author-list{
 	width: 290px;
-	float: right;
 	height: 500px;
-	margin-top: 20px;
+
+	position: absolute;
+	right: 0;
+	top: 355px;
+
 	background-color: white;
 	overflow: hidden;
 }

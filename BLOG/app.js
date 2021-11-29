@@ -1,4 +1,5 @@
 const express = require('express');
+const request = require('request');
 const path = require('path');
 // 引入路由模块
 const home = require('./route/home');
@@ -13,11 +14,6 @@ const config = require('config');
 
 // 导入 art-template 模板引擎
 const template = require('art-template');
-// dataformat
-// const dateFormat = require('dateformat');
-
-// // 创建用户
-// require('./model/user');
 
 // 创建网站服务器
 const app = express();
@@ -28,10 +24,6 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'art');
 // 指定渲染 art 模板使用的引擎
 app.engine('art', require('express-art-template'));
-// 为模板导入方法
-// template.defaults.imports.dateformat = dateFormat;
-
-console.log(config.get('title'));
 
 if(process.env.NODE_ENV == 'development'){
 	// 目前处于开发环境

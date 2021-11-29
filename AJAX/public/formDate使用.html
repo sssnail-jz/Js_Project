@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<form id = "form">
+		<input type="text" name = "username">
+		<input type="password" name = "password">
+		<input type="button" id = "btn" value="提交">
+	</form>
+
+	<script type="text/javascript">
+		var btn = document.getElementById('btn');
+		var form = document.getElementById('form');
+		btn.onclick = function(){
+			var formData = new FormData(form);
+			var xhr = new XMLHttpRequest();
+			xhr.open('post', 'http://localhost:3000/FormData');
+			xhr.send(formData);
+			xhr.onload = function(){
+				if(xhr.status == 200){
+					console.log(xhr.responseText);
+				}
+			}
+		}
+	</script>
+</body>
+</html>

@@ -2,6 +2,10 @@ const express = require('express');
 
 const admin = express.Router();
 
+admin.get('/getAccessToken', require('./admin/getAccessToken'));
+
+admin.get('/gitlogin', require('./admin/gitlogin'));
+
 admin.get('/login', require('./admin/loginPage'));
 
 admin.post('/login', require('./admin/login'));

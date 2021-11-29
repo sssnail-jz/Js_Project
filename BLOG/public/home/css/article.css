@@ -25,13 +25,21 @@
 	overflow: hidden;
 }
 
+.right-container{
+	padding: 0;
+	border: 0;
+	position: relative;
+}
+
 .article-right-userinfo{
 	width: 290px;
 	height: 300px;
-	float: right;
+
+	position: absolute;
+	right: 0;
+
 	padding: 0;
 	background: #FFF;
-	position: relative;
 }
 
 .blog-logo {
@@ -67,12 +75,14 @@
 }
 
 .form-search{
-	margin-top: 20px;
 	width: 290px;
 	height: 50px;
-	float: right;
+
+	position: absolute;
+	right: 0;
+	top: 320px;
+
 	padding: 0;
-	position: relative;
 }
 
 .form-search input{
@@ -113,8 +123,11 @@
 
 .type-list{
 	width: 290px;
-	float: right;
-	margin-top: 20px;
+	
+	position: absolute;
+	right: 0;
+	top: 390px;
+
 	background-color: white;
 }
 
@@ -189,6 +202,10 @@
     padding-inline-start: 40px;
 	margin-right: 0px;
     padding: 0 40px;
+}
+
+.article-content pre{
+	overflow-x:scroll;
 }
 
 .article-comment{

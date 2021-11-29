@@ -73,7 +73,7 @@ textarea {
 	height: 60px;
 	background: #3f434c;
 	
-	z-index: 999;
+	z-index: 9999;
 	position: sticky;
 	top: 0;
 }
@@ -95,6 +95,8 @@ textarea {
 
 /* 网站导航开始 */
 .navigation {
+	position: absolute;
+	left: 1127px;
 	height: 60px;
 }
 

@@ -6,14 +6,15 @@ const guard = function(req,res,next){
 	// [如果用户以非 login 的路由访问服务器，但是携带的 cookie 是空的
 	// 说明用户不是在登录状态访问非 login 路由，让用户到 login 页面，
 	// 否则，用户以登录状态访问非 login 路由是允许的。]
-	if(req.url != '/login' && !req.session.username){
-		res.redirect('/admin/login');
-	}else{
-		if(req.session.role == 'normal' && req.url != '/logout'){
-			return res.redirect('/home/');
-		}
-		next();
-	}
+	// if(req.url != '/login' && !req.session.username && req.url != '/getAccessToken'){
+	// 	res.redirect('/admin/login');
+	// }else{
+	// 	if(req.session.role == 'normal' && req.url != '/logout'){
+	// 		return res.redirect('/home/');
+	// 	}
+	// 	next();
+	// }
+	next();
 }
 
 module.exports = guard;
