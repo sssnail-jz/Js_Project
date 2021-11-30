@@ -1,6 +1,6 @@
 const moment = require('moment');
 
-function parseOriginOneCommentArr(comments){
+function parseOriginCommentArr(comments){
 
 	var resultarr = [];
 
@@ -8,10 +8,14 @@ function parseOriginOneCommentArr(comments){
 		var one = comments[i];
 
 		resultarr.push({
-			_id: one._id,
-			aid: one.aid._id,
+			_id: one._id, // 评论 id
+			aid: one.aid._id, // 文章id
+			uid: one.uid._id, // 用户 id
+
 			authorlogin: one.uid.login,
-			authorhtml_url: one.uid.html_url,
+			authorhtml_url: one.uid.html_url, 
+			authoravatar_url: one.uid.avatar_url,
+			
 			time: parseDate(one.time),
 			content: one.content
 		});
@@ -26,4 +30,4 @@ function parseDate(originDate){
 	return moment(timeNum).format('YYYY-MM-DD');
 }
 
-module.exports = parseOriginOneCommentArr;
+module.exports = parseOriginCommentArr;

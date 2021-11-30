@@ -59,7 +59,7 @@
                     			<img width="32" height="32" class="author-avatar" alt="author avatar" src="{{$value.avatar_url}}">
                 			</a>
 							<a class="author-name" href="/home/userinfo?id={{$value._id.toString()}}">
-								{{$value.login}}（{{articleCount}}）
+								{{$value.login}}（{{$value.articleCount}}）
 							</a>
 						</li>
 						{{/each}}

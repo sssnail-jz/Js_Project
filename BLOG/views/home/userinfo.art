@@ -86,7 +86,7 @@
 					</li>
 				</ul>
 			</div>
-			<form action="#" class="form-search">
+			<form method = "get" action="#" class="form-search">
 				<input name="q" type="text" placeholder="搜索...">
 				<button type="submit" class="button-search">搜索</button>
 			</form>
@@ -95,9 +95,9 @@
 					<div class = "widget-content">
 						<ul>
 							<li>
-								<a href = "/home/userinfo?id={{userInfo_._id.toString()}}&label=C/C++">
+								<a href = "/home/userinfo?id={{userInfo_._id.toString()}}&label=C/CPP">
 									<span class="icon-hammer"></span>
-									C/C++
+									C/CPP
 								</a>
 
 							</li>

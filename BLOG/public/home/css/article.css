@@ -23,6 +23,7 @@
 	padding-bottom: 0px;
 	margin-bottom: 20px;
 	overflow: hidden;
+	font-size: 14px;
 }
 
 .right-container{
@@ -279,9 +280,38 @@
 	color: black;
 }
 
+.comment-header{
+	position: relative;
+}
+
+.comment-header-login,
+.comment-header-url
+{
+	display: inline-block;
+	position: absolute;
+	left: 60px;
+}
+
+.comment-header-login{
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.comment-header-time{
+	font-size: 10px;
+	margin-left: 60px;
+	color: gray;
+}
+
+.comment-header-url{
+	font-size: 13px;
+	margin-top: 20px;
+}
+
 .comment-content {
-	line-height: 22px;
-	margin-top: 5px;
+	background-color:gainsboro ;
+	margin-left: 60px;
+	font-size: 16px;
 }
 
 /* 评论结束 */

@@ -2,7 +2,7 @@ const {Article} = require('../../model/article');
 const {Comment} = require('../../model/comment');
 const {GitUser}= require('../../model/gituser');
 const parseOriginOneArticle = require('../../tools/parseOriginOneArticle');
-const parseOriginOneCommentArr = require('../../tools/parseOriginOneCommentArr');
+const parseOriginCommentArr = require('../../tools/parseOriginCommentArr');
 const mongoose = require('mongoose');
 
 module.exports = async function(req, res){
@@ -23,7 +23,7 @@ module.exports = async function(req, res){
 		res.render('home/article', {
 			article: parseOriginOneArticle(originArticle),
 			userinfoarticle, userinfoarticle,
-			comments: parseOriginOneCommentArr(comments)
+			comments: parseOriginCommentArr(comments)
 		});
 	}
 	else{

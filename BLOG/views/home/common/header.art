@@ -3,7 +3,7 @@
 		<div class="header-content">
 			<!-- 网站logo开始 -->
 			<h1 class="logo logo-left">
-				<!-- <a href="/home/"><img src="images/logo.png" alt="哲"></a> -->
+				<a href="/home/"><img src="images/logo.png" alt="哲"></a>
 			</h1>
 			<!-- 网站logo结束 -->
 			<!-- 网站导航开始 -->
@@ -27,17 +27,19 @@
 				{{/if}}
 				<li id = "li-login">
 					{{if userInfo}}
-						<a href="/home/">信息</a>
+						<a rel="nofollow" href="/home/">
+							<img style = "margin-top: 10px;" width="40" height="40" class="author-avatar" alt="author avatar" src="{{userInfo.avatar_url}}">
+						</a>
 					{{else}}
-						<a href="https://github.com/login/oauth/authorize?client_id=b7acf6ece76078645f4f&redirect_uri=http://127.0.0.1:80/admin/getAccessToken">gitHub登录</a>
+						<a class="a-login" href="https://github.com/login/oauth/authorize?client_id=b7acf6ece76078645f4f&redirect_uri=http://127.0.0.1:80/admin/getAccessToken">gitHub登录</a>
 					{{/if}}
 					<div id = "login-menu-wraper">
 						<ul>
 						{{if userInfo}}
-							<li>
+							<li style="width: 92px;">
 								<!-- 这里 将 id 转换为 ObjectId 在进行比较 -->
 								<a href="/home/userinfo?id={{userInfo._id.toString()}}">用户</a>
-							</li>
+							</li style="width: 92px;">
 							<li>
 								<a href="/admin/logout"> 退出 </a>
 							</li>

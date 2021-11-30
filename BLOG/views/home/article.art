@@ -49,15 +49,17 @@
 					<!-- 评论列表 -->
 					{{each comments}}
 						<div class="mb10">
-							<div class="article-info">
-								<span class="author">{{$value.authorlogin}}</span>
-								<span>{{$value.time}}</span>
-								<a href = "{{$value.authorhtml_url}}">{{$value.authorhtml_url}}</a>
+							<div class="comment-header">
+								<a class="comment-header-avatar" href="/home/userinfo?id={{$value.uid.toString()}}">
+									<img " width="50" height="50" class="author-avatar" alt="author avatar" src="{{$value.authoravatar_url}}">
+								</a>
+								<a class="comment-header-login" href="/home/userinfo?id={{$value.uid.toString()}}">{{$value.authorlogin}}</a>
+								<a class="comment-header-url" href="{{$value.authorhtml_url}}">{{$value.authorhtml_url}}</a>
 							</div>
 							<div class="comment-content">
-								
 								{{@$value.content}}
 							</div>
+							<span class="comment-header-time">{{$value.time}}</span>
 						</div>
 					{{/each}}
 

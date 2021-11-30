@@ -10,7 +10,10 @@ module.exports = async function(req, res) {
 	 
 	var label = req.query.label;
 	var articles = null;
-
+	
+	console.log('[ (userinfo) label checkout :  ]' + label);
+	console.log('[ (userinfo) userid checkout : ]' + id);
+	
 	// 查找到此用户对应的文章列表
 	if(label == null){
 		articles = await Article.find({

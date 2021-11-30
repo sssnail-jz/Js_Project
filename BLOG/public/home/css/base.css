@@ -96,7 +96,7 @@ textarea {
 /* 网站导航开始 */
 .navigation {
 	position: absolute;
-	left: 1127px;
+	left: 1115px;
 	height: 60px;
 }
 
@@ -118,14 +118,17 @@ textarea {
 
 .navigation li a:hover,
 .navigation li .active {
-	background: #ff7300;
+	background-color:black;
 }
 
 #li-write-article a{
-	background-color: #007AFF;
-}
-#li-write-article a:hover{
 	background-color: #ff7300;
+	border-radius: 5%;
+	
+}
+
+#li-write-article a:hover{
+	background-color:black;
 }
 
 #login-menu-wraper{
@@ -139,6 +142,10 @@ textarea {
 #li-login:hover #login-menu-wraper
 {
 	display: block;
+}
+
+.author-avatar{
+	border-radius: 100%;
 }
 
 /* 网站导航结束 */
