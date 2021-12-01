@@ -24,7 +24,7 @@
 									<span>{{$value.publishDate}}</span>
 									<span class = "label" style = "display:inline">{{$value.label}}</span>
 									{{if userInfo}}
-										{{if userInfo._id.toString() == userInfo_._id.toString()}}
+										{{if onlineUserFlags == true}}
 											<a class = "article-del" href = "/home/article-del?id={{@$value._id.toString()}}">删除</a>
 											<a class = "article-mod" href = "/home/article-mod?id={{@$value._id.toString()}}">修改</a>
 										{{/if}}

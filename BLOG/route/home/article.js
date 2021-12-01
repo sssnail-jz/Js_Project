@@ -6,6 +6,8 @@ const parseOriginCommentArr = require('../../tools/parseOriginCommentArr');
 const mongoose = require('mongoose');
 
 module.exports = async function(req, res){
+	req.app.locals.userInfo = await GitUser.findOne({node_id: req.session.node_id});
+	
 	const id = req.query.id;
 	 
 	// 为了新增评论时候定位到最底部
@@ -29,7 +31,7 @@ module.exports = async function(req, res){
 	else{
 		res.render('home/article', {
 			article: parseOriginOneArticle(originArticle),
-			comments: parseOriginOneCommentArr(comments),
+			comments: parseOriginCommentArr(comments),
 			userinfoarticle, userinfoarticle,
 			newcommentflags: true
 		});

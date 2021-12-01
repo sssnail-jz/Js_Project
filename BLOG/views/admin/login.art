@@ -12,21 +12,37 @@
 <body>
 	<div class="htmleaf-container">
 		<header class="htmleaf-header">
-			<h1>Welcome</h1>
+			<h1>Welcome Snail</h1>
 			<div class="htmleaf-links">
 				<a class="htmleaf-icon icon-htmleaf-home-outline" href="/home/" title="不登录回到主页" target="_blank"></a>
 				<a class="htmleaf-icon icon-htmleaf-arrow-forward-outline" href="#" title="联系作者" target="_blank"></a>
 			</div>
 		</header>
 		<div class="wrapper">
+			<h3 style = "position: absolute;;">
+				本次修改:
+			</h3>
+			<h4 style = "position: absolute; top: 30px;">
+				1，多用户串线的问题
+			</h4>
+			<h4 style = "position: absolute;  top: 60px;">
+				2，提交评论转圈问题:
+			</h4>
+			<h4 style = "position: absolute; top: 90px;">
+				3，新增登录页面
+			</h4>
 			<div class="container">
-				<h1>Login</h1>
+				<h1 id="login-tip">Login</h1>
 				
 				<form action="/admin/login" method = "post" class="form">
-					<input type="text" name = "email" placeholder="Email">
-					<input type="password" name = "password" placeholder="Password">
-					<button type="submit" id="login-button">Login</button>
-					<a style = "display: block; margin-top:10px; color: red; font-weight: bold" href = "https://github.com/login/oauth/authorize?client_id=b7acf6ece76078645f4f&redirect_uri=http://127.0.0.1:80/admin/getAccessToken">GitHub登录</a>
+					<!-- 
+						<input type="text" name = "email" placeholder="Email">
+						<input type="password" name = "password" placeholder="Password">
+						
+					-->
+					<button id="login-button">
+						<a style = " display: block; width: 100%; height: 100%; color: black; font-weight: bold" href = "https://github.com/login/oauth/authorize?client_id=b7acf6ece76078645f4f&redirect_uri=http://127.0.0.1:80/admin/getAccessToken">GitHub登录</a>
+					</button>
 				</form>
 			</div>
 			
@@ -58,7 +74,8 @@
 	<script src="/admin/lib/loginplugin/js/jquery-2.1.1.min.js"></script>
 	<script>
 	$('#login-button').click(function (event) {
-	    
+		document.get
+		$('#login-tip').text('Login...');
 	    $('form').fadeOut(500);
 	    $('.wrapper').addClass('form-success');
 	});

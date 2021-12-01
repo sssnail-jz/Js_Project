@@ -26,24 +26,18 @@
 					</li>
 				{{/if}}
 				<li id = "li-login">
-					{{if userInfo}}
-						<a rel="nofollow" href="/home/">
-							<img style = "margin-top: 10px;" width="40" height="40" class="author-avatar" alt="author avatar" src="{{userInfo.avatar_url}}">
-						</a>
-					{{else}}
-						<a class="a-login" href="https://github.com/login/oauth/authorize?client_id=b7acf6ece76078645f4f&redirect_uri=http://127.0.0.1:80/admin/getAccessToken">gitHub登录</a>
-					{{/if}}
+					<a rel="nofollow" href="/home/">
+						<img style = "margin-top: 10px;" width="40" height="40" class="author-avatar" alt="author avatar" src="{{userInfo.avatar_url}}">
+					</a>
 					<div id = "login-menu-wraper">
 						<ul>
-						{{if userInfo}}
 							<li style="width: 92px;">
 								<!-- 这里 将 id 转换为 ObjectId 在进行比较 -->
-								<a href="/home/userinfo?id={{userInfo._id.toString()}}">用户</a>
+								<a href="/home/userinfo">用户</a>
 							</li style="width: 92px;">
 							<li>
 								<a href="/admin/logout"> 退出 </a>
 							</li>
-						{{/if}}
 						</ul>
 					</div>
 				</li>

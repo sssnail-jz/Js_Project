@@ -24,7 +24,7 @@ module.exports = async function(req, res){
 		body: params
 	},function(error, response, body) {
 		if(body == undefined){
-			res.redirect('/home');
+			res.redirect('/admin/login');
 		}
 		else{
 			console.log('[ github access_token 获取成功: ] ' + body.access_token);

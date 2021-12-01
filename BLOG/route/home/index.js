@@ -4,6 +4,7 @@ const parseOriginArticleArr = require('../../tools/parseOriginArticleArr');
 const assignArticleInfoToUser = require('../../tools/assignArticleInfoToUser');
 
 module.exports = async function(req, res){
+	req.app.locals.userInfo = await GitUser.findOne({node_id: req.session.node_id});
 	
 	var label = req.query.label;
 	var articles = null;

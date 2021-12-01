@@ -42,7 +42,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(session({secret: 'secret key'}));
 
 // 设置消息中间件
-app.use('/admin', require('./middleware/loginGuard'));
+app.use('/', require('./middleware/loginGuard'));
 
 // 为路由匹配对象
 app.use('/home', home);

@@ -1,8 +1,10 @@
 const {Article} = require('../../model/article');
+const {GitUser}= require('../../model/gituser');
 const parseOriginOneArticle = require('../../tools/parseOriginOneArticle');
 const mongoose = require('mongoose');
 
 module.exports = async function(req, res){
+	req.app.locals.userInfo = await GitUser.findOne({node_id: req.session.node_id});
 	
 	const id = req.query.id;
 	// 查找到这篇文章

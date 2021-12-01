@@ -4,10 +4,27 @@ const mongoose = require('mongoose');
 const parseOriginArticleArr = require('../../tools/parseOriginArticleArr');
 
 module.exports = async function(req, res) {
+	req.app.locals.userInfo = await GitUser.findOne({node_id: req.session.node_id});
 
 	// 用户id
-	const id = req.query.id;
-	 
+	// 当有 id 的时候说明是当前用户查看别的用户的信息
+	// 没有说明是用户查看自己的用户信息，此时根据 cookie 知道当前用户
+	var id = req.query.id;
+	var onlineUserFlags = false;
+	var onlineUser = await GitUser.findOne({node_id: req.session.node_id});
+
+	if(id == undefined){
+		userself = true;
+		console.log('aaaaaa');
+		console.log(onlineUser);
+		id = onlineUser._id;
+	}
+
+	// 用户从主页面点了自己的个人信息
+	if(id == onlineUser._id){
+		onlineUserFlags = true;
+	}
+
 	var label = req.query.label;
 	var articles = null;
 	
@@ -34,5 +51,7 @@ module.exports = async function(req, res) {
 		userInfo_: userInfo_,
 		// 传递此用户相关的文章列表到模板
 		articles: parseOriginArticleArr(articles),
+		// 是否是用户自己查看了自己的信息
+		onlineUserFlags: onlineUserFlags
 	});
 }
