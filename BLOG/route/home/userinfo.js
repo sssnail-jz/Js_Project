@@ -7,16 +7,14 @@ module.exports = async function(req, res) {
 	req.app.locals.userInfo = await GitUser.findOne({node_id: req.session.node_id});
 
 	// 用户id
-	// 当有 id 的时候说明是当前用户查看别的用户的信息
+	// 有 id 的时候说明是当前用户查看别的用户的信息
 	// 没有说明是用户查看自己的用户信息，此时根据 cookie 知道当前用户
 	var id = req.query.id;
+	// 是在线用户自己请求自己的用户信息页面
 	var onlineUserFlags = false;
 	var onlineUser = await GitUser.findOne({node_id: req.session.node_id});
 
 	if(id == undefined){
-		userself = true;
-		console.log('aaaaaa');
-		console.log(onlineUser);
 		id = onlineUser._id;
 	}
 

@@ -1,6 +1,6 @@
 const formidable = require('formidable');
 const path = require('path');
-const {Article} = require('../../model/article');
+const {Article} = require('../../../model/article');
 
 module.exports = function(req, res){
 	const form = new formidable.IncomingForm();
