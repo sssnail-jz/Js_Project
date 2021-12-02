@@ -251,6 +251,7 @@
 }
 
 .icon-hammer,
+.icon-bubbles,
 .icon-home,
 .icon-info,
 .icon-qq,
@@ -298,4 +299,15 @@
     padding-inline-start: 40px;
 	margin-right: 0px;
     padding: 0 40px;
+}
+
+#float-right-comment-count{
+	color: black;
+	text-decoration: none;
+	float: right;
+	margin-left: 15px;
+}
+
+#float-right-comment-count:hover{
+	color: #dc3545;
 }

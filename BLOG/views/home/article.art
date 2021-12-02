@@ -8,9 +8,28 @@
 	<script>
 		window.location ="#to-footer";
 	</script>
+	<script type="text/javascript">
+		function hideCommentReply(id){
+			var obj = document.getElementById(id);
+			obj.style.display = "none";
+		}
+
+		function showCommentReply(id, width, height){
+			var obj  = document.getElementById("comment-reply-form");
+			var winWidth = document.documentElement.clientWidth;
+			var winHeight = document.documentElement.clientHeight;
+			var offsetTop = document.documentElement.offsetTop;
+			var left = (winWidth - width)/2;
+			var top  = (winHeight - height)/2 + offsetTop;
+			obj.style.top = top + "px";
+			obj.style.left = left + "px";
+			obj.style.display = "block";
+		}
+	</script>
 {{/block}}
 
 {{block 'main'}}
+
 	{{include './common/header.art'}}
 		<div class="index-article clearfix">
 			<div class = "article-left-main">
@@ -28,7 +47,7 @@
 				<div class="article-comment">
 				{{if userInfo}}
 					<h4>评论</h4>
-					<form class="comment-form" action = "/home/comment" method = "post">
+					<form class="comment-form" action = "/home/comment-new" method = "post">
 						<textarea class="comment" name = "content"></textarea>
 						<input type = "hidden" name = "aid" value = {{article._id.toString()}}>
 						<div class="items">
@@ -50,16 +69,27 @@
 					{{each comments}}
 						<div class="mb10">
 							<div class="comment-header">
+								<!-- 头像 -->
 								<a class="comment-header-avatar" href="/home/userinfo?id={{$value.uid.toString()}}">
 									<img " width="50" height="50" class="author-avatar" alt="author avatar" src="{{$value.authoravatar_url}}">
 								</a>
+								<!-- 用户名 -->
 								<a class="comment-header-login" href="/home/userinfo?id={{$value.uid.toString()}}">{{$value.authorlogin}}</a>
+								<!-- 用户url -->
 								<a class="comment-header-url" href="{{$value.authorhtml_url}}">{{$value.authorhtml_url}}</a>
 							</div>
 							<div class="comment-content">
 								{{@$value.content}}
 							</div>
-							<span class="comment-header-time">{{$value.time}}</span>
+							<div>
+								<span class="comment-header-time">{{$value.time}}</span>
+								{{if userInfo._id.toString() == $value.uid.toString()}}
+									<a class="comment-tooter-del" href="/home/comment-del?id={{$value._id.toString()}}&aid={{article._id.toString()}}">删除</a>
+								{{/if}}
+							<!-- 
+								<a class="comment-footer-reply">回复</a>
+							 -->
+							</div>
 						</div>
 					{{/each}}
 
@@ -120,6 +150,5 @@
 	<script src="/admin/lib/ckeditor/plugins/codesnippet/lib/highlight/highlight.pack.js"></script>
 	<script src="/admin/lib/ckeditor/plugins/codesnippet/lib/highlight/highlight-jack.js"></script>
 	<script>hljs.initHighlightingOnLoad();</script>
-
 {{/block}}
 	

@@ -9,7 +9,9 @@ home.get('/userinfo', require('./home/userinfo'));
 // 文章详情
 home.get('/article', require('./home/article'));
 // 提交文章评论
-home.post('/comment', require('./home/comment'));
+home.post('/comment-new', require('./home/comment-new'));
+// 删除评论路由
+home.get('/comment-del', require('./home/comment-del'));
 
 // 新建文章 get 路由
 home.get('/article-new', require('./home/article-new'));

@@ -87,17 +87,31 @@
 }
 
 .article-title,
-.more-text a{
+.more-text a,
+#float-left-username,
+#float-left-label{
 	display: inline;
 	font-weight: normal;
 	color: red;
 }
 
 .article-title:hover,
-.more-text a:hover{
+.more-text a:hover,
+#float-left-username:hover,
+#float-left-label:hover{
 	cursor: pointer;
 	color: black;
 	text-decoration: underline;
+}
+
+#float-right-comment-count{
+	color: black;
+	float:right; 
+	margin-left: 15px"
+}
+
+#float-right-comment-count:hover{
+	color: #dc3545;
 }
 
 .right-container{
@@ -177,7 +191,8 @@
     font-size: 18px;
 }
 
-.icon-hammer:before,
+.icon-hammer,
+.icon-bubbles,
 .icon-user{
 	content: "\e996";
 }

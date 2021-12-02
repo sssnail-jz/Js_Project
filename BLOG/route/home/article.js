@@ -18,7 +18,7 @@ module.exports = async function(req, res){
 	// 查找到这篇文章的所有评论
 	var comments = await Comment.find({aid: id}).populate('uid');
 	// 找到写这篇文章的人的信息
-	var userinfoarticle = await GitUser.findOne({_id: originArticle.author});
+	var userinfoarticle = await GitUser.findOne({_id: originArticle.author._id});
 
 	if(newcommentflags == null)
 	{

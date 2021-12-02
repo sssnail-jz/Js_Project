@@ -19,7 +19,7 @@ module.exports = async function(req, res){
 	}
 
 	res.render('home/index', {
-		articles: parseOriginArticleArr(articles),
+		articles: await parseOriginArticleArr(articles),
 		users: await assignArticleInfoToUser()
 	});
 }

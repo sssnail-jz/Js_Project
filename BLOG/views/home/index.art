@@ -20,9 +20,14 @@
 							<div class="article-header">
 								<a class="article-title" href="/home/article?id={{$value._id.toString()}}">{{$value.title}}</a>
 								<div class="article-info">
-									<span class="author">{{$value.authorlogin}}</span>
-									<span>{{$value.publishDate}}</span>
-									<span class = "label">{{$value.label}}</span>
+
+									<a id="float-left-username" style="float:left; cursor:pointer" href="/home/userinfo?id={{$value.authorid.toString()}}">{{$value.authorlogin}}</a>
+									<span style="float:left; margin-left: 14px">{{$value.publishDate}}</span>
+									<a id="float-left-label" style="float:left; cursor:pointer;" href="/home?label={{$value.label}}">{{$value.label}}</a>
+
+									<a id="float-right-comment-count" rel="nofollow" href="/home/article?id={{$value._id.toString()}}&newcommentflags=true">
+										<i class="icon-bubbles"></i>（{{$value.commentCount}}）
+									</a>
 								</div>
 							</div>
 							<div class="article-content">

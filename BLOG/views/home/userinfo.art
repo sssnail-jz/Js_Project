@@ -22,7 +22,10 @@
 								<a class="article-title" href="/home/article?id={{$value._id.toString()}}">{{$value.title}}</a>
 								<div class="article-info">
 									<span>{{$value.publishDate}}</span>
-									<span class = "label" style = "display:inline">{{$value.label}}</span>
+									<a id="float-left-label" style="float:left; cursor:pointer;" href="/home/userinfo?id={{userInfo_._id.toString()}}&label={{$value.label}}">{{$value.label}}</a>
+									<a id="float-right-comment-count" rel="nofollow" href="/home/article?id={{$value._id.toString()}}&newcommentflags=true">
+										<i class="icon-bubbles"></i>（{{$value.commentCount}}）
+									</a>
 									{{if userInfo}}
 										{{if onlineUserFlags == true}}
 											<a class = "article-del" href = "/home/article-del?id={{@$value._id.toString()}}">删除</a>

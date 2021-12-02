@@ -48,7 +48,7 @@ module.exports = async function(req, res) {
 		// 传递用户信息到用户信息模板
 		userInfo_: userInfo_,
 		// 传递此用户相关的文章列表到模板
-		articles: parseOriginArticleArr(articles),
+		articles: await parseOriginArticleArr(articles),
 		// 是否是用户自己查看了自己的信息
 		onlineUserFlags: onlineUserFlags
 	});

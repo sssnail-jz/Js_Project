@@ -32,6 +32,8 @@
             'mail': '&#xe945;',
             'calendar': '&#xe953;',
             'date': '&#xe953;',
+            'bubbles': '&#xe96c;',
+            'comments': '&#xe96c;',
             'user': '&#xe971;',
             'profile2': '&#xe971;',
             'cogs': '&#xe995;',
