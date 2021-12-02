@@ -23,8 +23,12 @@
 								<div class="article-info">
 									<span>{{$value.publishDate}}</span>
 									<a id="float-left-label" style="float:left; cursor:pointer;" href="/home/userinfo?id={{userInfo_._id.toString()}}&label={{$value.label}}">{{$value.label}}</a>
+									
 									<a id="float-right-comment-count" rel="nofollow" href="/home/article?id={{$value._id.toString()}}&newcommentflags=true">
 										<i class="icon-bubbles"></i>（{{$value.commentCount}}）
+									</a>
+									<a id="float-right-like-count" rel="like" href="/home/article?id={{$value._id.toString()}}">
+										<i class="icon-like"></i>（）
 									</a>
 									{{if userInfo}}
 										{{if onlineUserFlags == true}}
@@ -45,6 +49,22 @@
 						</div>
 					</li>
 				{{/each}}
+				<!-- 分页开始 -->
+				<div class="page-switch">
+					{{if pageinfo.page > 1}}
+						<a href="/home/userinfo?id={{userInfo_._id.toString()}}&page={{pageinfo.page - 1}}">
+							上一页
+						</a>
+					{{/if}}
+					<% for(var i = 0; i < pageinfo.display.length; i++) { %>
+						<a class="{{pageinfo.page == pageinfo.display[i]? 'active' : 'noactive'}}" href="/home/userinfo?id={{userInfo_._id.toString()}}&page={{pageinfo.display[i]}}">{{pageinfo.display[i]}}</a>
+					<% } %>
+					{{if pageinfo.page < pageinfo.pages}}
+						<a href="/home/userinfo?id={{userInfo_._id.toString()}}&page={{pageinfo.page - 0 + 1}}">
+							下一页
+						</a>
+					{{/if}}
+				</div>
 			</ul>
 		</div>
 		<!-- 文章框架结束 -->

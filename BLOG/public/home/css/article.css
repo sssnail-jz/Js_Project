@@ -321,3 +321,23 @@
 }
 
 /* 评论结束 */
+
+/* 分页开始 */
+.page-switch{
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.page-switch a {
+	color: black;
+	display: inline-block;
+	border-radius: .25rem;
+	border: 1px solid black;
+	font-size: 14px;
+	padding: 10px;
+	margin: 0 10px;
+}
+
+.page-switch .active {
+	background-color: #ff7300;
+}

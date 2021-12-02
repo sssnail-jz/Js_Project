@@ -86,6 +86,27 @@
 	bottom: -46px;
 }
 
+/* 分页开始 */
+.page-switch{
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.page-switch a {
+	display: inline-block;
+	border-radius: .25rem;
+	border: 1px solid black;
+	font-size: 14px;
+	padding: 10px;
+	margin: 0 10px;
+}
+
+.page-switch .active {
+	background-color: #ff7300;
+}
+
+/* 分页结束 */
+
 .article-title,
 .more-text a,
 #float-left-username,
@@ -93,7 +114,7 @@
 	display: inline;
 	font-weight: normal;
 	color: red;
-}
+}	
 
 .article-title:hover,
 .more-text a:hover,
@@ -104,12 +125,14 @@
 	text-decoration: underline;
 }
 
+#float-right-like-count,
 #float-right-comment-count{
 	color: black;
 	float:right; 
-	margin-left: 15px"
+	margin-left: 5px;
 }
 
+#float-right-like-count:hover,
 #float-right-comment-count:hover{
 	color: #dc3545;
 }
@@ -192,6 +215,7 @@
 }
 
 .icon-hammer,
+.icon-like,
 .icon-bubbles,
 .icon-user{
 	content: "\e996";
