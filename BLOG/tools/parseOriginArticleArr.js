@@ -1,5 +1,6 @@
 const moment = require('moment');
 const {Comment} = require('../model/comment');
+const {Like}= require('../model/like');
 
 async function parseOriginArticleArr(articleArr){
 	var articles = [];
@@ -15,7 +16,8 @@ async function parseOriginArticleArr(articleArr){
 			publishDate: parseDate(one.publishDate),
 			content: one.content,
 			label: one.label, 
-			commentCount: await Comment.countDocuments({aid: one._id})
+			commentCount: await Comment.countDocuments({aid: one._id}),
+			like: await Like.countDocuments({aid: one._id})
 		});
 	}
 	return articles;

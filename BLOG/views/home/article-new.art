@@ -54,11 +54,7 @@
 {{/block}}
 
 {{block 'script'}}
-    <script src="/admin/lib/ckeditor/ckeditor.js"></script>
-	<script src="/admin/lib/ckeditor/samples/js/sample.js"></script>
-	<script>
-		initSample();
-	</script>
+	<script src="/lib/ckeditor/ckeditor.js"></script>
     <script type="text/javascript">
 		CKEDITOR.replace( 'editor' );
     </script>

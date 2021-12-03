@@ -71,7 +71,7 @@ textarea {
 	padding-left: 185px;
 	padding-right: 185px;
 	height: 60px;
-	background: #3f434c;
+	background: rgb(139, 139, 139);;
 	
 	z-index: 9999;
 	position: sticky;

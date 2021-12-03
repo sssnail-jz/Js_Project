@@ -2,8 +2,8 @@
 
 {{block 'css'}}
 	<link rel="stylesheet" href="/home/css/index.css">
-	<link rel="stylesheet" href="/admin/lib/ckeditor/plugins/codesnippet/lib/highlight/styles/github.css">
-	<link rel="stylesheet" href="/admin/lib/icomoon/style.css">
+	<link rel="stylesheet" href="/lib/ckeditor/plugins/codesnippet/lib/highlight/styles/github.css">
+	<link rel="stylesheet" href="/lib/icomoon/style.css">
 {{/block}}
 
 {{block 'main'}}
@@ -29,7 +29,7 @@
 										<i class="icon-bubbles"></i>（{{$value.commentCount}}）
 									</a>
 									<a id="float-right-like-count" rel="like" href="/home/article?id={{$value._id.toString()}}">
-										<i class="icon-like"></i>（）
+										<i class="icon-like"></i>（{{$value.like}}）
 									</a>
 								</div>
 							</div>
@@ -98,6 +98,6 @@
 {{/block}}
 
 {{block 'script'}}
-	<script src="/admin/lib/ckeditor/plugins/codesnippet/lib/highlight/highlight.pack.js"></script>
+	<script src="/lib/ckeditor/plugins/codesnippet/lib/highlight/highlight.pack.js"></script>
 	<script>hljs.initHighlightingOnLoad();</script>
 {{/block}}

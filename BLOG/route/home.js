@@ -13,6 +13,9 @@ home.post('/comment-new', require('./home/comment-new'));
 // 删除评论路由
 home.get('/comment-del', require('./home/comment-del'));
 
+// 喜欢文章路由
+home.get('/article-like', require('./home/article-like'));
+
 // 新建文章 get 路由
 home.get('/article-new', require('./home/article-new'));
 // 文章数据提交路由

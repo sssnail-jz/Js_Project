@@ -341,3 +341,20 @@
 .page-switch .active {
 	background-color: #ff7300;
 }
+
+.like-wraper{
+	text-align: center;
+}
+
+#like{
+	display: inline-block;
+	font-size:66px;  
+	color:gray; 
+	cursor:pointer;
+}
+
+#like:hover{
+	color:gray; 
+}
+
+.cs{color:red;}
