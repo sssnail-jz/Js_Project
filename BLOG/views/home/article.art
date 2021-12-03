@@ -31,7 +31,7 @@
 {{block 'main'}}
 
 	{{include './common/header.art'}}
-		<div class="index-article clearfix">
+		<div class="index-content clearfix">
 			<div class = "article-left-main">
 				<div class="article-header">
 					<h3 class="article-title">{{article.title}}</h3>
@@ -166,6 +166,7 @@
 {{/block}}
 
 {{block 'script'}}
+	<link rel="stylesheet" href="/snail-common.css">
 	<script src="/lib/loginplugin/js/jquery-2.1.1.min.js"></script>
 	<script src="/lib/ckeditor/plugins/codesnippet/lib/highlight/highlight.pack.js"></script>
 	<script src="/lib/ckeditor/plugins/codesnippet/lib/highlight/highlight-jack.js"></script>

@@ -1,7 +1,7 @@
 {{extend './common/layout.art'}}
 
 {{block 'css'}}
-	<link rel="stylesheet" href="/home/css/base.css">
+	<link rel="stylesheet" href="/snail-common.css">
 	<link rel="stylesheet" href="/lib/ckeditor/plugins/codesnippet/lib/highlight/styles/github.css">
 	<link rel="stylesheet" href="/lib/icomoon/style.css">
 	<link rel="stylesheet" href="/home/css/userinfo.css">
@@ -11,7 +11,7 @@
 
 	{{include './common/header.art'}}
 	
-	<div class = "index-userinfo clearfix">
+	<div class = "index-content clearfix">
 		<!-- 文章框架开始 -->
 		<div class="article-small">
 		 	<ul class = "article-small-ul">

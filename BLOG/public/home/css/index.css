@@ -5,220 +5,13 @@
 	clear: both;
 }
 
-.index-content{
-	margin: 0px, 0px;
-	margin-top: 10px;
-	padding-left: 165px;
-	padding-right: 165px;
-	position: relative;
-}
-
-.article-header{
-	padding-bottom: 20px;
-}
-
-.article-content{
-	border-top: 1px solid #eee;
-}
-
-/* 让文章内部的 ul 显示和 ckeditor 里一致 */
-.article-content ul{
-	list-style: disc;
-	display: block;
-    list-style-type: disc;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 40px;
-	margin-right: 0px;
-    padding: 0 40px;
-}
-
-.article-small-ul {
-	margin-top: 20px;
-	float: left;
-}
-
-.article-small-li {
-	width: 800px;
-	height: 680px;
-	background: #FFF;
-	padding-top: 20px;
-	padding-left: 20px;
-	padding-right: 20px;
-	padding-bottom: 0px;
-	margin-bottom: 20px;
-	overflow: hidden;
-}
-
-.article-small .article-content{
-	width: 100%;
-	height: 560px;
-	padding-left: 10px;
-	padding-right: 10px;
-	padding-top: 40px;
-	font-size: 14px;
-	box-sizing: border-box;
-	overflow: hidden;
-}
-
-.container{
-	position: relative;
-}
-
-.more-div{
-	height: 130px;
-	position: absolute;
-	bottom: 0px;
-	left: 0;
-	right: 0;
-	background: -webkit-linear-gradient(rgba(255,255,255,0),rgba(255,255,255,1));
-}
-
-.more-text{
-	width: 100%;
-	text-align:center;
-	font-size:150%;
-
-	position:absolute;
-	z-index: 999;
-	bottom: -46px;
-}
-
-/* 分页开始 */
-.page-switch{
-	margin-top: 10px;
-	margin-bottom: 20px;
-}
-
-.page-switch a {
-	display: inline-block;
-	border-radius: .25rem;
-	border: 1px solid black;
-	font-size: 14px;
-	padding: 10px;
-	margin: 0 10px;
-}
-
-.page-switch .active {
-	background-color: #ff7300;
-}
-
-/* 分页结束 */
-
-.article-title,
-.more-text a,
-#float-left-username,
-#float-left-label{
-	display: inline;
-	font-weight: normal;
-	color: red;
-}	
-
-.article-title:hover,
-.more-text a:hover,
-#float-left-username:hover,
-#float-left-label:hover{
-	cursor: pointer;
-	color: black;
-	text-decoration: underline;
-}
-
-#float-right-like-count,
-#float-right-comment-count{
-	color: black;
-	float:right; 
-	margin-left: 5px;
-}
-
-#float-right-like-count:hover,
-#float-right-comment-count:hover{
-	color: #dc3545;
-}
-
-.right-container{
-	padding: 0;
-	border: 0;
-	position: relative;
-}
-
+/********************/
 .form-search{
-	width: 290px;
-	height: 50px;
-
-	position: absolute;
-	right: 0;
-	top: 20px;
-
-	padding: 0;
+	top:0px;
 }
 
-.form-search input{
-	width: 190px;
-	height: 100%;
-	border: 0;
-	position: absolute;
-	left: 0;
-
-	/* 拷贝过来的属性 */
-    padding-left: 10px;
-    font-size: 14px;
-
-	color: inherit;
-    font: inherit;
-	border-radius: .25rem;
-}
-
-.form-search button{
-	width: 80px;
-	height: 100%;
-	border: 0;
-	position: absolute;
-	right: 0;
-
-	/* 拷贝过来的属性 */
-	font-weight: 400;
-	text-align: center;
-    white-space: nowrap;
-	vertical-align: middle;
-	font-size: 1rem;
-    line-height: 1.5;
-	color: #fff;
-    background-color: #dc3545;
-	border-radius: .25rem;
-	
-}
-
-/* 右侧 */
 .type-list{
-	width: 290px;
-	
-	position: absolute;
-	right: 0;
-	top: 90px;
-
-	background-color: white;
-}
-
-.author-list h4,
-.type-list h4{
-	margin: 0;
-    color: #111;
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
-    padding: 14px 20px 13px;
-    font-weight: 500;
-    line-height: 28px;
-    letter-spacing: 2px;
-    font-size: 18px;
-}
-
-.icon-hammer,
-.icon-like,
-.icon-bubbles,
-.icon-user{
-	content: "\e996";
+	top: 70px;
 }
 
 .author-list{
@@ -227,7 +20,7 @@
 
 	position: absolute;
 	right: 0;
-	top: 355px;
+	top: 345px;
 
 	background-color: white;
 	overflow: hidden;
@@ -249,14 +42,19 @@
 	position: absolute;
 	font-size: 14px;
 }
+/********************/
 
-.widget-content li{
-	margin: 8px 20px;
-	display: list-item;
-    text-align: -webkit-match-parent;
-    padding: 6px 0;
+/********************/
+.article-title:hover,
+.more-text a:hover,
+#float-left-username:hover,
+#float-left-label:hover{
+	text-decoration: underline;
 }
 
-.widget-content a{
-	cursor: pointer;
+#float-right-like-count,
+#float-right-comment-count{
+	float:right; 
+	margin-left: 5px;
 }
+/********************/
