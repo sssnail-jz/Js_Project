@@ -1,4 +1,4 @@
-﻿/**
+﻿﻿/**
  * @license Copyright (c) 2003-2021, CKSource - Frederico Knabben. All rights reserved.
  * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
  */
@@ -6,7 +6,7 @@
 /**
  * @fileOverview Simple CKEditor 4 plugin that adds placeholder text to the editor.
  */
-( function() {
+ ( function() {
 	CKEDITOR.plugins.add( 'editorplaceholder', {
 		isSupportedEnvironment: function() {
 			return !CKEDITOR.env.ie || CKEDITOR.env.version >= 9;
@@ -51,11 +51,13 @@
 				'position: absolute;' +
 				'opacity: .8;' +
 				'color: #aaa;' +
+				'font-size: 25px;' +
 				'content: attr( ' + ATTRIBUTE_NAME + ' );' +
 			'}' +
 			'.cke_wysiwyg_div[' + ATTRIBUTE_NAME + ']::before {' +
 				'margin-top: 1em;' +
 			'}'
+ 
 	};
 
 	function bindPlaceholderEvents( editor, events ) {
@@ -114,5 +116,5 @@
 	 * @since 4.15.0
 	 * @member CKEDITOR.config
 	 */
-	CKEDITOR.config.editorplaceholder = '';
+	CKEDITOR.config.editorplaceholder = 'Welcome Snail . . . 请务必于下方填写文章标题！';
 }() );

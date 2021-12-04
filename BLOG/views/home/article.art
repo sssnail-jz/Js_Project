@@ -2,6 +2,7 @@
 
 {{block 'css'}}
 	<link rel="stylesheet" href="/home/css/base.css">
+	<link rel="stylesheet" href="/snail-common.css">
 	<link rel="stylesheet" href="/home/css/article.css">
 	<link rel="stylesheet" href="/lib/ckeditor/plugins/codesnippet/lib/highlight/styles/github.css">
 	<link rel="stylesheet" href="/lib/icomoon/style.css">
@@ -154,9 +155,7 @@
 {{/block}}
 
 {{block 'script'}}
-	<link rel="stylesheet" href="/snail-common.css">
 	<script src="/lib/ckeditor/plugins/codesnippet/lib/highlight/highlight.pack.js"></script>
-	<script src="/lib/ckeditor/plugins/codesnippet/lib/highlight/highlight-jack.js"></script>
 	<script>hljs.initHighlightingOnLoad();</script>
 	<script>
 		document.getElementById("comment-footer-reply").onclick = 

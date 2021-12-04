@@ -5,6 +5,7 @@
 
 /* 内容区容器 */
 .content-container{
+	padding-top: 10px;
 	margin: auto;
 	width: 70%;
 }
