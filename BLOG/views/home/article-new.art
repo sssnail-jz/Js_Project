@@ -39,6 +39,7 @@
 					<div class="form-group">
 						<span>标签：</span>
 						<select name = "label">
+							<option value="C#">C#</option>
 							<option value="C/CPP">C/CPP</option>
 							<option value="QT">QT</option>
 							<option value="HTML/CSS/JS">HTML/CSS/JS</option>

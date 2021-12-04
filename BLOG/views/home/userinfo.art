@@ -22,7 +22,10 @@
 								<a class="article-title" href="/home/article?id={{$value._id.toString()}}">{{$value.title}}</a>
 								<div class="article-info">
 									<span>{{$value.publishDate}}</span>
-									<a id="float-left-label" style="float:left; cursor:pointer;" href="/home/userinfo?id={{userInfo_._id.toString()}}&label={{$value.label}}">{{$value.label}}</a>
+									<a id="float-left-label" style="float:left; cursor:pointer;" href="/home/userinfo?id={{userInfo_._id.toString()}}&label={{$value.label}}">
+										<i class="icon-hammer"></i>
+										{{$value.label}}
+									</a>
 									
 									<a id="float-right-comment-count" rel="nofollow" href="/home/article?id={{$value._id.toString()}}&newcommentflags=true">
 										<i class="icon-bubbles"></i>（{{$value.commentCount}}）
@@ -117,6 +120,12 @@
 				<h4>分类</h4>
 					<div class = "widget-content">
 						<ul>
+							<li>
+								<a href = "/home/userinfo?id={{userInfo_._id.toString()}}&label=C%23">
+									<span class="icon-hammer"></span>
+									C#
+								</a>
+							</li>
 							<li>
 								<a href = "/home/userinfo?id={{userInfo_._id.toString()}}&label=C/CPP">
 									<span class="icon-hammer"></span>

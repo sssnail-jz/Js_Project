@@ -19,7 +19,7 @@ module.exports = async function(req, res){
 		method: 'post',
 		json: true,
 		headers: {
-			"content-type": "application/json",
+			"content-type": "application/json"
 		},
 		body: params
 	},function(error, response, body) {
@@ -33,7 +33,7 @@ module.exports = async function(req, res){
 				method: 'get',
 				headers: {
 					"Authorization": 'token '+ body.access_token,
-					'User-Agent': 'niyueling'
+					'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2763.0 Safari/537.36'
 				}
 			},
 			function(error, response, body){

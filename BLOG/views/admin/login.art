@@ -43,7 +43,6 @@
 					<button id="login-button">
 						<a style = " display: block; width: 100%; height: 100%; color: black; font-weight: bold" 
 						href = "https://github.com/login/oauth/authorize?client_id=b7acf6ece76078645f4f&redirect_uri=http://127.0.0.1:80/admin/getAccessToken">GitHub登录</a>
-	https://graph.qq.com/oauth2.0/authorize?response_type=code&display=pc&client_id='+101982407+'&redirect_uri='+http://127.0.0.1:80/admin/getAccessToken+'&state=zmzui&scope=get_user_info,get_vip_info,get_vip_rich_info
 					</button>
 				</form>
 			</div>

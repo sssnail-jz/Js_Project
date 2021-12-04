@@ -61,4 +61,4 @@ module.exports = async function(req, res) {
 		// 是否是用户自己查看了自己的信息
 		onlineUserFlags: onlineUserFlags
 	});
-}
+} 

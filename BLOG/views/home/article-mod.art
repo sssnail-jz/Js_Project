@@ -40,6 +40,7 @@
 					<div class="form-group">
 						<span>标签：</span>
 						<select name = "label">
+							<option value="C#" {{article && article.label == 'C#' ? 'selected' : ''}}>C#</option>
 							<option value="C/CPP" {{article && article.label == 'C/CPP' ? 'selected' : ''}}>C/CPP</option>
 							<option value="QT" {{article && article.label == 'QT' ? 'selected' : ''}}>QT</option>
 							<option value="HTML/CSS/JS" {{article && article.label == 'HTML/CSS/JS' ? 'selected' : ''}}>HTML/CSS/JS</option>

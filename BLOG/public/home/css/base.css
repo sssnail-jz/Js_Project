@@ -71,7 +71,7 @@ textarea {
 	padding-left: 185px;
 	padding-right: 185px;
 	height: 60px;
-	background: rgb(139, 139, 139);;
+	background: rgb(139, 139, 139);
 	
 	z-index: 9999;
 	position: sticky;
@@ -83,8 +83,9 @@ textarea {
 
 /* 网站logo开始 */
 .logo, .logo a, .logo img {
-	width: 120px;
-	height: 60px;
+	margin-top: 2px;
+	width: 110px;
+	height: 50px;
 }
 
 .logo a,
@@ -96,7 +97,7 @@ textarea {
 /* 网站导航开始 */
 .navigation {
 	position: absolute;
-	left: 1115px;
+	left: 1099px;
 	height: 60px;
 }
 
@@ -123,8 +124,6 @@ textarea {
 
 #li-write-article a{
 	background-color: #ff7300;
-	border-radius: 5%;
-	
 }
 
 #li-write-article a:hover{

@@ -132,8 +132,11 @@ body{
 }
 
 .blog-msg a{
+	display: inline-block;
+	height: 50px;
 	cursor: pointer;
 	color: blue;
+	overflow: hidden;
 }
 
 .blog-msg a:hover{
@@ -161,6 +164,7 @@ body{
 .icon-like,
 .icon-qq,
 .icon-plus,
+.icon-user,
 .icon-enveop{
 	content: "\e996";
 }
@@ -243,7 +247,7 @@ body{
 
 	position:absolute;
 	z-index: 999;
-	bottom: -48px;
+	bottom: -44px;
 }
 /********************/
 
@@ -255,6 +259,10 @@ body{
 #float-left-label{
 	color: red;
 }	
+
+.article-title{
+	display: inline-block;
+}
 
 .article-title:hover,
 .article-header a:hover, 
@@ -275,7 +283,7 @@ body{
 .page-switch a {
 	display: inline-block;
 	border-radius: .25rem;
-	border: 1px solid black;
+	color: black;
 	font-size: 14px;
 	padding: 10px;
 	margin: 0 10px;
@@ -300,7 +308,34 @@ body{
 	margin-right: 0px;
     padding: 0 40px;
 }
+
 .article-content pre{
 	overflow-x:scroll;
+}
+
+blockquote {
+    padding-left: 20px;
+    padding-right: 8px;
+    padding-top: 2px;
+	padding-bottom: 2px;
+
+    border-style: solid;
+    border-color: #fff;
+	border-left-color: #ccc;
+    border-width: 5px;
+	border-top-width: 0px;
+	border-bottom-width: 0px;
+	display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 40px;
+    margin-inline-end: 40px;
+}
+blockquote p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
 }
 /********************/

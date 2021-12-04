@@ -27,13 +27,13 @@
 				{{/if}}
 				<li id = "li-login">
 					<a href="/home/">
-						<img style = "margin-top: 10px;" width="40" height="40" class="author-avatar" alt="author avatar" src="{{userInfo.avatar_url}}">
+						<img style = "margin-top: 2px;" width="54" height="54" class="author-avatar" alt="author avatar" src="{{userInfo.avatar_url}}">
 					</a>
 					<div id = "login-menu-wraper">
 						<ul>
-							<li style="width: 92px;">
+							<li style="width: 106px;">
 								<!-- 这里 将 id 转换为 ObjectId 在进行比较 -->
-								<a href="/home/userinfo">用户</a>
+								<a href="/home/userinfo">管理</a>
 							</li style="width: 92px;">
 							<li>
 								<a href="/admin/logout"> 退出 </a>
