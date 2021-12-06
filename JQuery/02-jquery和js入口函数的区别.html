@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="js/jquery-3.6.0.js"></script>
+	<script>
+		/**
+		 * 第一个区别
+		 * 		1，原生 js 会等到 dom 元素加载完毕，并且图片也加载完毕之后执行
+		 * 		2，jquery 会等到 dom 元素加载完毕，但不会等到图片也加载完毕
+		 * 第二个区别：
+		 * 		1，原生 js 写了多个入口函数的时候执行最后一个入口函数
+		 * 		2，jquery 写了多个入口函数之后会执行第一个入口函数
+		 */
+		window.onload = function(ev){
+
+		}
+		$(document).ready(function(){
+			alert('aaa');
+		});
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

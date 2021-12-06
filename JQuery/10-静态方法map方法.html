@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="js/jquery-3.6.0.js"></script>
+	<title>Document</title>
+	<script>
+		var arr = [1, 3, 5, 7, 9];
+		var obj = {0:1, 1:2, 2:3, 3:4, 4:5, length:5};
+
+		// 使用原生map方法
+		// 注意最后一个参数
+		var res = arr.map(function(value, index, arr){
+			// console.log(index);
+			// console.log(value);
+			// console.log(arr);
+			return value + index;
+		});
+		console.log(res);
+		
+		var res2 = $.map(arr, function(value, index){
+			// console.log(index);
+			// console.log(value);
+			return value + index;
+		});
+		console.log(res2);
+
+		$.map(obj, function(value, index){
+			// console.log(index);
+			// console.log(value);
+		});
+
+		var res3 = $.each(obj, function(index, value){
+			console.log(index, value);
+		});
+		console.log(res3);
+		/**
+		 * 注意：
+		 * jquery 中 map 和 each 方法返回值的比较
+		 * 
+		 */ 
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="js/jquery-3.6.0.js"></script>
+	<script>
+		$(document).ready(function(){
+			/**
+			 * $("button").trigger("click");
+			 * $("button").triggerHandler("click");
+			 * 区别：
+			 * 		前者会触发事件冒泡、默认行为
+			 * 		后者不会触发事件冒泡 、不会触发默认行为
+			 * 
+			 * 注意：用 trigger无法触发a标签的默认行为
+			 * 		解决办法：在 a 里面放一个儿子，例如 span，通过触发span的点击事件
+			 * 		来触发 a 的点击事件，再触发 a 的默认行为
+			 */
+		});
+	</script>
+</head>
+<body>
+	<button></button>
+</body>
+</html>

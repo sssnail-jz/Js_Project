@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="js/jquery-3.6.0.js"></script>
+	<script>
+		/**
+		 * 1，释放 $ 的使用权
+		 * 		jQuery.noConflict();
+		 * 		释放操作必须在其他的 jquery 代码之前
+		 * 2，自定义 jquery 的访问符号
+		 * 		var jack = jQuery.noConflict();
+		 */
+		var jack = jQuery.noConflict();
+		jack(document).ready(function(){
+			alert('aaa');
+		});
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

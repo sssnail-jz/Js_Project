@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="js/jquery-3.6.0.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("button").on("myclick.jack", function(){
+				alert("myclick.jack");
+			});
+			$("button").on("myclick.zheng", function(){
+				alert("myclick.zheng");
+			});
+			// 这里将触发两个事件绑定函数，证明.xx并不是单纯地字符串
+			$("button").trigger("myclick");
+			$("button").trigger("myclick.jack");
+
+			/**
+			 * 父元素也会应用命名空间 
+			 */
+		});
+	</script>
+</head>
+<body>
+	<button></button>
+</body>
+</html>

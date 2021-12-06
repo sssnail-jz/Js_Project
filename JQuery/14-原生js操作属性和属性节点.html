@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="js/jquery-3.6.0.js"></script>
+	<script>
+		/**
+		 * 1，在编写 html 标签的时候在标签中加入的属性就是属性节点
+		 * 2，操作属性节点：
+		 * 		getAttribute("attrName");
+		 * 		setAttribute("attrName", "value");
+		 */ 
+		$(document).ready(function(){
+			var div = document.getElementsByTagName("div")[0];
+			console.log(div.getAttribute("name"));
+		});
+	</script>
+</head>
+<body>
+	<div name="jack"></div>
+</body>
+</html>

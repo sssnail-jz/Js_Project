@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="js/jquery-3.6.0.js"></script>
+	<script>
+		$(document).ready(function(){
+			/**
+			 * 两种绑定事件的方法
+			 * 但是第一种有些事件是 jquery 没有实现的，
+			 * 第二种只要是 js 有的事件，都可以进行绑定
+			 * 
+			 * 并且：给同一事件绑定多个方法不会覆盖，都会执行，
+			 * 无论是哪种绑定方法
+			 */ 
+			$("button").click(function(){
+				alert("111");
+			});
+			$("button").on("click", function(){
+				alert("222");
+			});
+		});
+	</script>
+</head>
+<body>
+	<button></button>
+</body>
+</html>

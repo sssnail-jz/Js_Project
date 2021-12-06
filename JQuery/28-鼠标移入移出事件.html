@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="js/jquery-3.6.0.js"></script>
+	<script>
+		$(document).ready(function(){
+			/**
+			 * mouseover / mouseout 
+			 * 		当父元素包含子元素的情况下，鼠标移入移除子元素的时候也会
+			 * 		触发父元素的移入移除
+			 * mouseenter / mouseleave （推荐使用）
+			 * 		当父元素包含子元素的情况下，鼠标移入移除子元素的时候不会
+			 * 		触发父元素的移入移除 
+			 * $(".father").hover(...) （用 mouseenter / mouseleave 实现的）
+			 * 		当 hover 参数为两个的时候，第一个监听移入
+			 * 		当 hover 参数为一个时候，一个函数两个事件
+			 * 		都监听
+			 */
+		});
+	</script>
+</head>
+<body>
+	<button></button>
+</body>
+</html>
