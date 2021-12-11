@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		.send{
+			background: yellow;
+		}
+	</style>
+	<script src="js/jquery-3.6.0.js"></script>
+	<script>
+		$(document).ready(function(){
+			
+			$("body").delegate(".comment", "propertychange input", function(){
+				if($(this).val().length <= 0){
+					$(".send").prop("disabled", false);
+					$(".send").css({
+						background: "yellow"
+					});
+				}else{
+					$(".send").prop("disabled", false);
+					$(".send").css({
+						background: "red"
+					});
+				}
+			});
+
+			$(".send").on("click", function(){
+				var $value = $(".comment").val();
+				var newE = creatEle($value)
+				$(".list").prepend(newE);
+			});
+
+			$("body").delegate(".top", "click", function(){
+				$(this).parents("li").css({
+					background: "red"
+				});
+			});
+
+			$("body").delegate(".del", "click", function(){
+				$(this).parents("li").remove();
+			});
+
+			function creatEle(e){
+				return $("<li>" + e + "<button class ='top'>顶</button><button class='del'>删</button></li>");
+			}
+		});
+	</script>
+</head>
+<body>
+	<textarea class="comment"></textarea>
+	<button class="send">提交</button>
+	<ul class="list"></ul>
+</body>
+</html>

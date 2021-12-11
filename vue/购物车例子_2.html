@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		ul{
+			list-style: none;
+		}
+		li{
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div id="demo">
+		<base-layout></base-layout>
+	</div>
+	
+	<script src="./js/vue.js"></script>
+	<script>
+		// 定义子组件
+		var cartTitle = {
+			props: ['name'],
+			template: `
+				<div>{{name}}的购物车</div>
+			`
+		}
+		var cartList = {
+			props: ['list'],
+			template: `
+				<div>
+					<ul v-for="item in list">
+						<li :key="item.id" 
+							v-bind:style="item.color"
+							@click="del(item.id)">
+							[名字：]{{item.name}}
+						</li>
+						<!-- value 属性的动态绑定 -->
+						<!-- $event 的使用 -->
+						<input :value="item.prise"
+						@blur="changePrise(item.id, $event)"></input>
+					</ul>
+				</div>
+			`,
+			methods: {
+				del: function(id){
+					// 将删除事件传递给父组件处理
+					this.$emit('cart-del', id);
+				},
+				changePrise: function(id, event){
+					this.$emit('change-prise', {
+						id: id,
+						prise: event.target.value
+					});
+				}
+			}
+		}
+		var cartTotal = {
+			props: ['list'],
+			template: `
+				<div>总价（{{total}}）</div>
+			`,
+			// 使用计算属性
+			computed: {
+				total:function(){
+					var total = 0;
+					this.list.forEach(element => {
+						total += element.prise;
+					});
+					return total;
+				}
+			}
+		}
+
+		Vue.component('base-layout', {
+			template: `
+				<div class="cart">
+					<cart-title :name="name"></cart-title>
+					<cart-list 
+					:list="list" 
+					@cart-del="cartDel($event)"
+					@change-prise="changePrise($event)"></cart-list>
+					<cart-total :list="list"></cart-total>
+				</div>
+			`,
+			// 定义子组件
+			components: {
+				"cart-title": cartTitle,
+				"cart-list": cartList,
+				"cart-total": cartTotal
+			},
+			methods: {
+				cartDel: function(id){
+					var index = this.list.findIndex(function(item){
+						return item.id == id;
+					});
+					this.list.splice(index, 1);
+				},
+				changePrise: function(params){
+					this.list.some(item =>{
+						if(item.id == params.id){
+							item.prise = parseInt(params.prise);
+							return true;
+						}
+					});
+				}
+			},
+			data: function(){
+				return {
+					name: '张三',
+					list: [
+						{
+							id: 1,
+							name: '张三',
+							prise: 30,
+							color: {
+								color: "red"
+							}
+						},
+						{
+							id: 2,
+							name: '李四',
+							prise: 40,
+							color: {
+								color: "green"
+							}
+						},
+						{
+							id: 3,
+							name: '李四',
+							prise: 50,
+							color: {
+								color: "blue"
+							}
+						}
+					]
+				}
+			}
+		});
+		var vm = new Vue({
+			el: '#demo',
+			data: {
+			},
+			methods: {
+			}
+		});
+	</script>
+</body>
+</html>

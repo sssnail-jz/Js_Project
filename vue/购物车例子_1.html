@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<div id="demo">
+		<base-layout></base-layout>
+	</div>
+	
+	<script src="./js/vue.js"></script>
+	<script>
+		// 定义子组件
+		var cartTitle = {
+			template: `
+				<div>购物车头部</div>
+			`
+		}
+		var cartList = {
+			template: `
+				<div>
+					<ul>
+						<li>苹果</li>
+						<li>橘子</li>
+						<li>橙子</li>
+					</ul>
+				</div>
+			`
+		}
+		var cartTotal = {
+			template: `
+				<div>购物车总数</div>
+			`
+		}
+
+		Vue.component('base-layout', {
+			template: `
+				<div class="cart">
+					<cart-title></cart-title>
+					<cart-list></cart-list>
+					<cart-total></cart-total>
+				</div>
+			`,
+			// 定义子组件
+			components: {
+				"cart-title": cartTitle,
+				"cart-list": cartList,
+				"cart-total": cartTotal
+			}
+		});
+		var vm = new Vue({
+			el: '#demo',
+			data: {
+			},
+			methods: {
+			}
+		});
+	</script>
+</body>
+</html>

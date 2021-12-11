@@ -25,6 +25,7 @@
 		ul>li{
 			list-style: none;
 			padding: 5px 10px; 
+			cursor: pointer;
 		}
 		ul>li:nth-child(-n+3) span{
 			background-color: red;
@@ -38,11 +39,22 @@
 			line-height: 20px;
 			margin-right: 10px;
 		}
+		li > h1{
+			display: none;
+		}
+		.current > h1{
+			display: block;
+		}
 	</style>
 	<script src="js/jquery-3.6.0.js"></script>
 	<script>
 		$(document).ready(function(){
-
+			$("li").mouseenter(function(){
+				$(this).addClass("current");
+			});
+			$("li").mouseleave(function(){
+				$(this).removeClass("current");
+			});
 		});
 	</script>
 </head>

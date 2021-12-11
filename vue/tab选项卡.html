@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		#index{
+			width: 300px;
+			height: 300px;
+			margin: 50px 0;
+		}
+		.tab{
+			list-style: none;
+		}
+		.tab > li{
+			width: 100px;
+			height: 50px;
+			background: gray;
+			float: left;
+			text-align: center;
+			line-height: 50px;
+			cursor: pointer;
+		}
+		.tab>.active{
+			background: hotpink;
+		}
+		.content{
+			width: 300px;
+			height: 250px;
+			display: none;
+		}
+		.active-content{
+			display:block
+		}
+	</style>
+</head>
+<body>
+	<div id="index">
+		<ul class="tab">
+			<li :key='item.id' 
+			:class='currentIndex==index?"active":""' 
+			v-for='(item,index) in list' 
+			@click='changeIndex(index)'>{{item.title}}</li>
+		</ul>
+		<div class="content" :key='item.id' :class='currentIndex==index?"active-content":""' v-bind:style='item.style' v-for='(item,index) in list'></div>
+	</div>
+	<script src="./js/vue.js"></script>
+	<script>
+		var vm = new Vue({
+			el: '#index',	
+			data:{
+				currentIndex: 0,
+				list: [
+					{
+						id: 1,
+						title: "苹果",
+						style: "background-color:red"
+					},
+					{
+					
+						id: 2,
+						title: "橙子",
+						style: "background-color:blue"
+					},
+					{
+						id: 3,
+						title: "苹果",
+						style: "background-color:green"
+					}
+				]
+			},
+			methods: {
+				changeIndex: function(index){
+					this.currentIndex = index;
+				}
+			}
+		});
+	</script>
+</body>
+</html>

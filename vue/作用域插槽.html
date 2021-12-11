@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		.current{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="demo">
+		<!-- 通过属性绑定将list从父组件传递到子组件 -->
+		<fruit-list :list="list">
+			<!-- 得到子组件的属性 -->
+			<template slot-scope="slotProps">
+				<strong v-if="slotProps.info.id==2" class="current">{{slotProps.info.name}}</strong>
+				<span v-else>{{slotProps.info.name}}</span>
+			</template>
+
+		</fruit-list>
+	</div>
+	<script src="./js/vue.js"></script>
+	<script>
+		// 新建水果列表组件
+		Vue.component('fruit-list', {
+			// 接收父组件的属性
+			props: ['list'],
+			template: `
+				<div>
+					<li :key="item.id" v-for="item in list">
+						<slot :info='item'>{{item.name}}</slot>
+					</li>
+				</div>
+			`
+		});
+		var vm = new Vue({
+			el: '#demo',
+			data: {
+				list: [
+					{
+						id: 1,
+						name: '苹果'
+					},
+					{
+						id: 2,
+						name: '橘子'
+					},
+					{
+						id: 3,
+						name: '橙子'
+					}
+				]
+			}
+		});
+	</script>
+</body>
+</html>
